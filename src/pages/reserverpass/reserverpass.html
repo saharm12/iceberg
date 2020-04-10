@@ -1,0 +1,88 @@
+<!--
+  Generated template for the ReserverpassPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <ion-title>Réserver votre pass</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <form (ngSubmit)="Soumettre()">
+        <ion-list inset>
+            <ion-item>
+                <ion-label floating color="black"> Nom*</ion-label>
+                <ion-input [(ngModel)]="modelpart.nom" type="text" [ngModelOptions]="{standalone: true}"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating color="black"> Prénom*</ion-label>
+                <ion-input [(ngModel)]="modelpart.prenom" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating color="black"> Email*</ion-label>
+                <ion-input [(ngModel)]="modelpart.email" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating color="black"> Adresse*</ion-label>
+                <ion-input [(ngModel)]="modelpart.adresse" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating color="black"> Code Postal*</ion-label>
+                <ion-input [(ngModel)]="modelpart.code_postale" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating color="black"> Raison sociale</ion-label>
+                <ion-input [(ngModel)]="modelpart.raison_sociale" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating color="black"> Code TVA</ion-label>
+                <ion-input [(ngModel)]="modelpart.TVA" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating color="black"> Ville</ion-label>
+                <ion-input [(ngModel)]="modelpart.Ville" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label color="black"> Nombre de place à réserver</ion-label>
+                <ion-input [(ngModel)]="modelpart.reserver" [ngModelOptions]="{standalone: true}" placeholder="400 DH/personne" type="text"></ion-input>
+            </ion-item>
+
+
+            <ion-item>
+                <ion-label color="black"> Choix du programme</ion-label>
+                <ion-input [(ngModel)]="modelpart.programme" [ngModelOptions]="{standalone: true}" placeholder="TDA or/TDA silver/TDA Diamond" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Methode de paiement*</ion-label>
+                <ion-select [(ngModel)]="modelpart.paiement" [ngModelOptions]="{standalone: true}">
+                    <ion-option [value]="cat.title" *ngFor="let cat of paiement">{{cat.title}}</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating color="black">Chéque N° </ion-label>
+                <ion-input [(ngModel)]="modelpart.num_cheque" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+            </ion-item>
+
+            <ion-row>
+                <ion-col>
+                    <button ion-button color="primary" block large round (click)="Soumettre()">Soumettre </button>
+
+                </ion-col>
+            </ion-row>
+
+        </ion-list>
+    </form>
+
+</ion-content>

@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>register</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+
+    <ion-list inset>
+        <form [formGroup]="registerForm" (ngSubmit)="confirmer()">
+            <ion-item>
+                <ion-label floating>
+                    Nom
+                </ion-label>
+                <ion-input formControlName="nom" type="text" required [class.invalid]=" submitted &&registerForm.controls.nom.errors.required"></ion-input>
+
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>
+                    Prenom
+                </ion-label>
+                <ion-input formControlName="prenom" type="text" required [class.invalid]=" submitted &&registerForm.controls.prenom.errors.required"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>
+                    Email
+                </ion-label>
+                <ion-input formControlName="email" type="email" required [class.invalid]=" submitted && registerForm.controls.email.errors.required"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>
+                    Mot de passe
+                </ion-label>
+                <ion-input formControlName="password" type="password" [class.invalid]=" submitted && registerForm.controls.password.errors.required"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>
+                    Confirmer Mot de passe
+                </ion-label>
+                <ion-input formControlName="confirmPassword" type="password" required [class.invalid]="submitted &&registerForm.controls.confirmPassword.errors.required"></ion-input>
+            </ion-item>
+            <ion-item>
+                <button ion-button color="primary" large block round type="submit" [disabled]="!registerForm.valid">Confirmer</button>
+            </ion-item>
+        </form>
+    </ion-list>
+
+</ion-content>

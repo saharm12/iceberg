@@ -6,25 +6,65 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-
+import { MainPage } from '../pages/main/main';
+import { RegisterPage } from '../pages/register/register';
+import { InscriptionPage } from '../pages/inscription/inscription';
+import{ MeetingPage} from '../pages/meeting/meeting';
+import { ConcoursPage } from '../pages/concours/concours';
+import { CandidatPage } from '../pages/candidat/candidat';
+import { ExposantPage } from '../pages/exposant/exposant';
+import { ParticipantPage } from '../pages/participant/participant';
+import {HttpClientModule} from '@angular/common/http';
+import { RestProvider } from '../providers/rest/rest';
+import { ReserverpassPage } from '../pages/reserverpass/reserverpass';
+import { ProvidersRestExpoProvider } from '../providers/providers-rest-expo/providers-rest-expo';
+import { PartProvider } from '../providers/part/part';
+           
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage, 
+    MainPage,
+    RegisterPage,
+    
+    InscriptionPage,
+    MeetingPage,
+    ConcoursPage,
+    CandidatPage,
+    ExposantPage,
+    ParticipantPage,
+    ReserverpassPage
   ],
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
+    BrowserModule, 
+    IonicModule.forRoot(MyApp), HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage, 
+    MainPage, 
+    RegisterPage,
+    InscriptionPage,
+    MeetingPage,
+    ConcoursPage,
+    CandidatPage,
+    ExposantPage,
+    ParticipantPage,
+    ReserverpassPage,
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+   
+  
+
+
+    {provide:  ErrorHandler, useClass: IonicErrorHandler},
+    RestProvider,ProvidersRestExpoProvider,
+    PartProvider 
+  
   ]
 })
 export class AppModule {}

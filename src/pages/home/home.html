@@ -1,14 +1,47 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content padding class="background">
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <img src="/assets/imgs/tda.png" />
+            </ion-col>
+        </ion-row>
+        <form [formGroup]="loginGroup" (ngSubmit)="connect()">
+            <ion-row>
+                <ion-col>
+                    <ion-item class="item">
+                        <ion-label floating color="light">
+                            Email
+                        </ion-label>
+                        <ion-input type="text" formControlName="email" required></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-item class="item">
+                        <ion-label floating color="light">
+                            Password
+                        </ion-label>
+                        <ion-input type="password" formControlName="password" required></ion-input>
+                    </ion-item>
+                </ion-col> <button ion-button color="light" block large round type="submit" outline [disabled]="!loginGroup.valid">Se connecter </button>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+
+                </ion-col>
+            </ion-row>
+        </form>
+        <ion-row>
+            <ion-col>
+                <button ion-button color="light" block large round (click)="register()">S'inscrire </button>
+            </ion-col>
+        </ion-row>
+
+
+
+    </ion-grid>
+
+
 </ion-content>
