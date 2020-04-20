@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule, Popover } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -19,7 +19,8 @@ import { RestProvider } from '../providers/rest/rest';
 import { ReserverpassPage } from '../pages/reserverpass/reserverpass';
 import { ProvidersRestExpoProvider } from '../providers/providers-rest-expo/providers-rest-expo';
 import { PartProvider } from '../providers/part/part';
-           
+import{JurryPage}    from   '../pages/jurry/jurry' ;
+import {LaureatPage} from   '../pages/laureat/laureat';
 @NgModule({
   declarations: [
     MyApp,
@@ -33,7 +34,11 @@ import { PartProvider } from '../providers/part/part';
     CandidatPage,
     ExposantPage,
     ParticipantPage,
-    ReserverpassPage
+    JurryPage,
+    ReserverpassPage,
+    LaureatPage,
+    
+   
   ],
   imports: [
     BrowserModule, 
@@ -52,6 +57,10 @@ import { PartProvider } from '../providers/part/part';
     ExposantPage,
     ParticipantPage,
     ReserverpassPage,
+    JurryPage,
+    LaureatPage,
+   
+    
 
   ],
   providers: [
@@ -68,3 +77,5 @@ import { PartProvider } from '../providers/part/part';
   ]
 })
 export class AppModule {}
+
+

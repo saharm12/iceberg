@@ -15,22 +15,20 @@ export class PartProvider {
   constructor(public http: HttpClient) {
     console.log('Hello PartProvider Provider');
   }
-  
-Registerpart(nom,prenom,email,adresse,code_postale,raison_sociale, TVA, Ville , reserver, programme, paiement, num_cheque)
-{
-  return this.http.post(this.BASE_URL+'/AddPart',{
-    "nom" :nom,
-    "prenom":prenom,
-    "email":email,
-    "adresse":adresse,
-    "code_postale":code_postale,
-    "raison_sociale":raison_sociale,
-    "TVA":TVA,
-    "Ville":Ville,
-    "reserver":reserver,
-    "programme":programme,
-    "paiement":paiement,
-    "num_cheque":num_cheque,
-  });
-}
+  Register(nom, prenom, email, adresse, code_postale, raison_sociale, TVA, Ville, reserver, programme, paiement, num_cheque){
+    return this.http.post(this.BASE_URL+'/Register',{
+      "nom" :nom,
+      "prenom" : prenom,
+      "email" : email,
+      "adresse" : adresse,
+      "code_postale": code_postale,
+      "raison_sociale": raison_sociale,
+      "TVA": TVA,
+      "Ville": Ville,
+      "reserver": reserver,
+      "programme": programme,
+      "paiement": paiement,
+      "num_cheque": num_cheque,
+    });
+  }
 }

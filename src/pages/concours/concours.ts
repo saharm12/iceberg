@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {JurryPage}    from   '../../pages/jurry/jurry';
+import {LaureatPage} from   '../../pages/laureat/laureat';
 /**
  * Generated class for the ConcoursPage page.
  *
@@ -20,6 +21,12 @@ export class ConcoursPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ConcoursPage');
+  }
+  view(){
+    this.navCtrl.push(JurryPage);
+  }
+  afficher(){
+    this.navCtrl.push(LaureatPage);
   }
 
 }

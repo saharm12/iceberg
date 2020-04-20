@@ -50,8 +50,8 @@ psw:string ;
 showError(text){
   console.log("erreur");
   let alert =this .alertCtrl.create({
-    title:'Error',
-    message:'email or password is wrong',
+    title:'Erreur',
+    message:' E-mail ou mot de passe incorrecte',
    buttons:[{
      text:'ok',
     handler:()=>{console.log('OK')

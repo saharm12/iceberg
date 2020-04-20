@@ -30,7 +30,7 @@
 
             <ion-item>
                 <ion-label floating color="black"> Télèphone*</ion-label>
-                <ion-input [(ngModel)]="expoModel.telephone" name="telephone" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input maxlength="8" [(ngModel)]="expoModel.telephone" name="telephone" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
             </ion-item>
 
             <ion-item>
@@ -45,7 +45,7 @@
 
             <ion-item>
                 <ion-label floating color="black"> Code postal*</ion-label>
-                <ion-input [(ngModel)]="expoModel.postale" type="text" name="postale" [ngModelOptions]="{standalone: true}"></ion-input>
+                <ion-input maxlength="4" [(ngModel)]="expoModel.postale" type="text" name="postale" [ngModelOptions]="{standalone: true}"></ion-input>
             </ion-item>
 
             <ion-item>

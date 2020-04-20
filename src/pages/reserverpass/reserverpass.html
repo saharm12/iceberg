@@ -34,7 +34,7 @@
 
             <ion-item>
                 <ion-label floating color="black"> Code Postal*</ion-label>
-                <ion-input [(ngModel)]="modelpart.code_postale" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input maxlength="4" [(ngModel)]="modelpart.code_postale" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
             </ion-item>
 
             <ion-item>
@@ -66,15 +66,16 @@
             <ion-item>
                 <ion-label floating>Methode de paiement*</ion-label>
                 <ion-select [(ngModel)]="modelpart.paiement" [ngModelOptions]="{standalone: true}">
-                    <ion-option [value]="cat.title" *ngFor="let cat of paiement">{{cat.title}}</ion-option>
+                    <ion-option (click)="Soumettre()" [value]="cat.title" *ngFor="let cat of paiement">{{cat.title}}</ion-option>
                 </ion-select>
             </ion-item>
 
-            <ion-item>
-                <ion-label floating color="black">Chéque N° </ion-label>
-                <ion-input [(ngModel)]="modelpart.num_cheque" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
-            </ion-item>
-
+            <div *ngIf="paiementCheque">
+                <ion-item>
+                    <ion-label floating color="black">Chéque N° </ion-label>
+                    <ion-input [(ngModel)]="modelpart.num_cheque" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                </ion-item>
+            </div>
             <ion-row>
                 <ion-col>
                     <button ion-button color="primary" block large round (click)="Soumettre()">Soumettre </button>

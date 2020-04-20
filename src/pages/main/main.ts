@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,PopoverController } from 'ionic-angular';
 import { InscriptionPage } from '../inscription/inscription';
 import { MeetingPage } from '../meeting/meeting';
 import { ConcoursPage } from '../concours/concours';
+
 /**
  * Generated class for the MainPage page.
  *
@@ -12,12 +13,13 @@ import { ConcoursPage } from '../concours/concours';
 
 @IonicPage()
 @Component({
-  selector: 'page-main',
-  templateUrl: 'main.html',
+  selector: 'page-main', 
+  templateUrl: 'main.html', 
+  
 })
 export class MainPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams ) {
   }
 
   ionViewDidLoad() {
@@ -31,7 +33,7 @@ export class MainPage {
 
     Meeting()
   {
-      
+   
       this.navCtrl.push(MeetingPage) ; 
     }
   

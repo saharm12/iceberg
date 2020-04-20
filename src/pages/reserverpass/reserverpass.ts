@@ -15,13 +15,15 @@ import { PartProvider } from '../../providers/part/part';
   templateUrl: 'reserverpass.html',
 })
 export class ReserverpassPage {
-paiement=[];
-createSuccess = false;
+ paiement=[];
+ createSuccess = false;
+ paiementCheque : boolean = false;
 
-modelpart: Participant;
+
+  modelpart: Participant;
 
 
-  constructor(private alertCtrl: AlertController ,public navCtrl: NavController, public navParams: NavParams, private Part:PartProvider ){
+  constructor(private alertCtrl: AlertController ,public nav: NavController, public navParams: NavParams, private Part:PartProvider ){
     
   
    
@@ -39,8 +41,6 @@ modelpart: Participant;
     ]
   
 this.modelpart = new Participant();
-    
-   
       
   }
 
@@ -50,50 +50,54 @@ this.modelpart = new Participant();
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReserverpassPage');
+    
+
   }
 
   Soumettre(){
-  this.Part.Registerpart(this.modelpart.nom, this.modelpart.prenom, this.modelpart.email, this.modelpart.adresse, this.modelpart.code_postale, this.modelpart.raison_sociale, this.modelpart.TVA, this.modelpart.Ville, this.modelpart.reserver, this.modelpart.programme, this.modelpart.paiement, this.modelpart.num_cheque)
+    
+    if (this.modelpart.programme != "TDA/or" && this.modelpart.programme != "TDA/silver" && this.modelpart.programme != "TDA/Diamand" ){
+      this.showPopup("Echec", 'champ programme incorrecte  ');
+    }  else { 
+             
+        //(this.modelpart.paiement == "Chéque" ){
+             //this.paiementCheque = true;
+             
+            
+        
+  this.Part.Register(this.modelpart.nom, this.modelpart.prenom, this.modelpart.email, this.modelpart.adresse, this.modelpart.code_postale, this.modelpart.raison_sociale, this.modelpart.TVA, this.modelpart.Ville, this.modelpart.reserver, this.modelpart.programme, this.modelpart.paiement, this.modelpart.num_cheque)
     .subscribe ( success => {
       if (success) {
         this.createSuccess = true;
-        this.showEnregistrer("Félicitation!!!");
+        this.showPopup("Félicitation", "compte créer avec succés.");
       } else {
-        this.showError("Erreur");
+        this.showPopup("Erreur", "Probléme lors de création de compte!.");
           }
         },
        //error =>  {console.log("erreur"); } );
        error => {
-         this.showError(error);
+         this.showPopup("Error", error);
        });
-      }
+            }
   
-      showError(text){
-        console.log("erreur");
-        let alert =this .alertCtrl.create({
-          title:'Erreur',
-          message:'',
-         buttons:[{
-           text:'ok',
-          handler:()=>{console.log('OK')
-          } }]
-       });
-        alert.present();}
-      
-        showEnregistrer(text){
-          console.log("Espace réserver");
-          let alert =this .alertCtrl.create({
-            title:'Félicitation!',
-           // message:'Bienvenue',
-           buttons:[{
-             text:'ok',
-            handler:()=>{console.log('OK')
-            } }]
-         });
-          alert.present();
-        
-        }
-        
+    }
+      showPopup(title, text) {
+        let alert = this.alertCtrl.create({
+          title: title,
+          subTitle: text,
+          buttons: [
+            {
+              text: 'OK',
+              handler: data => {
+                if (this.createSuccess) {
+                  this.nav.popToRoot();
+                }
+              }
+            }
+          ]
+        });
+        alert.present();
+      }
     
   
 
