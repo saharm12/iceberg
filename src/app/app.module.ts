@@ -21,6 +21,7 @@ import { ProvidersRestExpoProvider } from '../providers/providers-rest-expo/prov
 import { PartProvider } from '../providers/part/part';
 import{JurryPage}    from   '../pages/jurry/jurry' ;
 import {LaureatPage} from   '../pages/laureat/laureat';
+import {FirstPage} from '../pages/first/first';
 @NgModule({
   declarations: [
     MyApp,
@@ -37,6 +38,8 @@ import {LaureatPage} from   '../pages/laureat/laureat';
     JurryPage,
     ReserverpassPage,
     LaureatPage,
+    FirstPage,
+  
     
    
   ],
@@ -59,6 +62,7 @@ import {LaureatPage} from   '../pages/laureat/laureat';
     ReserverpassPage,
     JurryPage,
     LaureatPage,
+    FirstPage
    
     
 

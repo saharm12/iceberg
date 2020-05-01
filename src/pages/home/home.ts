@@ -4,6 +4,7 @@ import { MainPage } from '../main/main';
 import { RegisterPage } from '../register/register';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RestProvider } from '../../providers/rest/rest';
+import { FirstPage } from '../first/first';
 
 @Component({
   selector: 'page-home',
@@ -81,6 +82,10 @@ showWelcome(text){
 
   register(){
     this.navCtrl.push(RegisterPage);
+
+  }
+  passer(){
+    this.navCtrl.push(FirstPage);
   }
 
 
