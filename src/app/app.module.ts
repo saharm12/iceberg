@@ -22,13 +22,26 @@ import { PartProvider } from '../providers/part/part';
 import{JurryPage}    from   '../pages/jurry/jurry' ;
 import {LaureatPage} from   '../pages/laureat/laureat';
 import {FirstPage} from '../pages/first/first';
+import {CategoriePage} from '../pages/categorie/categorie';
+import  {WebsitePage} from  '../pages/website/website';
+import{EshopPage} from '../pages/eshop/eshop';
+import { DigitalPage} from '../pages/digital/digital';
+  import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
+import { StartupPage } from '../pages/startup/startup';
+import { SeoPage } from '../pages/seo/seo';
+import { InfluenceurPage } from '../pages/influenceur/influenceur';
+import { MobilePage } from '../pages/mobile/mobile';
+import { BjuryPage } from '../pages/bjury/bjury';
+import { ReglePage } from '../pages/regle/regle';
+import { MapPage } from '../pages/map/map';
 @NgModule({
   declarations: [
     MyApp,
     HomePage, 
     MainPage,
     RegisterPage,
-    
+    CategoriePage,
+    SeoPage,
     InscriptionPage,
     MeetingPage,
     ConcoursPage,
@@ -39,6 +52,15 @@ import {FirstPage} from '../pages/first/first';
     ReserverpassPage,
     LaureatPage,
     FirstPage,
+    WebsitePage,
+    EshopPage,
+    DigitalPage,
+    StartupPage,
+    InfluenceurPage,
+    MobilePage,
+    BjuryPage,
+    ReglePage,
+    MapPage,
   
     
    
@@ -62,9 +84,20 @@ import {FirstPage} from '../pages/first/first';
     ReserverpassPage,
     JurryPage,
     LaureatPage,
-    FirstPage
-   
-    
+    FirstPage,
+    CategoriePage,
+    WebsitePage,
+    EshopPage,
+    DigitalPage,
+    StartupPage,
+   SeoPage,
+   InfluenceurPage,
+   MobilePage,
+   BjuryPage,
+    ReglePage,
+    MapPage,
+
+
 
   ],
   providers: [

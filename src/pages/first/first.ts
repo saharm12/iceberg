@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the FirstPage page.
@@ -20,6 +21,9 @@ export class FirstPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FirstPage');
+  }
+  inscrire(){
+    this.navCtrl.push(HomePage);
   }
   //slider =[
     //{
