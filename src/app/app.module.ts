@@ -34,6 +34,7 @@ import { MobilePage } from '../pages/mobile/mobile';
 import { BjuryPage } from '../pages/bjury/bjury';
 import { ReglePage } from '../pages/regle/regle';
 import { MapPage } from '../pages/map/map';
+import { LaureatProvider } from '../providers/laureat/laureat';
 @NgModule({
   declarations: [
     MyApp,
@@ -109,7 +110,8 @@ import { MapPage } from '../pages/map/map';
 
     {provide:  ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,ProvidersRestExpoProvider,
-    PartProvider 
+    PartProvider,
+    LaureatProvider 
   
   ]
 })

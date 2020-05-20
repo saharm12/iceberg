@@ -32,7 +32,8 @@ psw:string ;
      console.log(result);
    if (result.user==true){
     this.showWelcome("Bienvenue!!!");
-
+    localStorage.setItem('id',result.id); 
+    localStorage.setItem('token',result.token);  
      this.navCtrl.setRoot(MainPage);
    
      
