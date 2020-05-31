@@ -28,267 +28,32 @@
 
     <div [ngSwitch]="Meeting">
         <ion-list *ngSwitchCase="'speakers'">
-            <ion-item>
+            <ion-item *ngFor="let speak of speake">
                 <ion-thumbnail item-start>
-                    <img src="assets/imgs/madame.jpg">
+                    <img *ngIf="speak.image!=null" src="{{base_url}}{{speak.image}}">
                 </ion-thumbnail>
-                <h2>Hosni KRID GARGOURI</h2>
-                <h4>CEO Pi2R -Tunisie-
+                <h2>{{speak.nom_speakers}} {{speak.prennom_speakers}} </h2>
+
+                <h4>{{speak.pays}}
                 </h4>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/hosnikridgargouri/" target="blank_">
+                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="{{speak.profil_speakers}}" target="blank_">
                     <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
                     </button>
             </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/joelle.jpg">
-                </ion-thumbnail>
-                <h2>Joelle WALRAEVENS</h2>
-                <h4>Spécialiste LinkedIn _Formateur </h4>
-                <h4> Auteur -France-
-                </h4>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/joellewalraevensdeluzy/?locale=fr_FR2a2152/" target="blank_">
-                  <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-                  </button>
+        </ion-list>
+
+
+        <ion-list *ngSwitchCase="'programme'">
+            <ion-item *ngFor="let prog of programme">
+
+
             </ion-item>
 
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/patrice.jpg">
-                </ion-thumbnail>
-                <h2>Patrice Laubigat</h2>
-                <h4>Conteur d’histoires, créateur de
-                </h4>
-                <h4> sens- EforBrands -France-
-                </h4>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/patricelaubignat/?originalSubdomain=fr" target="blank_">
-                <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-                </button>
-            </ion-item>
-
-
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/stephane.jpg">
-                </ion-thumbnail>
-                <h2>Stephane AMARSY
-                </h2>
-                <h4>Co- fondateur & CEO Inbox
-                </h4>
-                <h5> -France-
-
-                </h5>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/stephane-amarsy-3747b51/?originalSubdomain=fr" target="blank_">
-              <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-              </button>
-            </ion-item>
-
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/philipe.jpg">
-                </ion-thumbnail>
-                <h2>Philippe JOURDAN
-
-                </h2>
-                <h4>CEO- Promise Consulting- Panel on the web
-
-                </h4>
-                <h5> -France-
-
-                </h5>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/philippe-jourdan/" target="blank_">
-            <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-            </button>
-            </ion-item>
-
-
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/frederic.jpg">
-                </ion-thumbnail>
-                <h2>Fréderic PERODEAU
-
-
-                </h2>
-                <h4>Directeur- Fondateur 5.5 Retail
-
-                </h4>
-                <h5> -France-
-
-                </h5>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/frederic-perodeau-a620301/" target="blank_">
-          <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-          </button>
-            </ion-item>
-
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/kais.jpg">
-                </ion-thumbnail>
-                <h2>Kais BEN SEDRINE
-                </h2>
-                <h4>Digital director- Wezign agence interactive
-                </h4>
-                <h5> -Tunisie –
-                </h5>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/kaisb1/" target="blank_">
-        <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-        </button>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/Nor.jpg">
-                </ion-thumbnail>
-                <h2>Norchène BEN DAHMENE MOUELHI
-
-                </h2>
-                <h4>Maitre de conférences-Formatrice en digital
-                </h4>
-                <h5> -Tunisie –
-                </h5>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/kaisb1/" target="blank_">
-      <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-      </button>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/bahia.jpg">
-                </ion-thumbnail>
-                <h2>Bahia NAR
-                </h2>
-                <h4>Communication & Social Media Expert
-                </h4>
-                <h5> -Tunisie –
-                </h5>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/bahianar/" target="blank_">
-    <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-    </button>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/arabella.jpg">
-                </ion-thumbnail>
-                <h2>Arabella Ignatieff
-                </h2>
-                <h4>Enseignante chercheuse à l’ISTEC
-                </h4>
-                <h5> -France –
-                </h5>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/arabella-ignatieff-21216b1/" target="blank_">
-  <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-  </button>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/sana.jpg">
-                </ion-thumbnail>
-                <h2>Sana EL MOULDI
-                </h2>
-                <h4>Formatrice Digital – Université de Bordeaux / ISG
-
-                </h4>
-                <h5> -Tunisie –
-                </h5>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/sana-el-mouldi-b1917462/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/lasd.png">
-                </ion-thumbnail>
-                <h2>Lassaad GHACHEM
-                </h2>
-                <h4>Enseignant, chercheur- ISG consultant
-
-                </h4>
-                <h5> -Tunisie –
-                </h5>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/lassaad-ghachem-ph-d-013568/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/ramzi.jpg">
-                </ion-thumbnail>
-                <h2>Ramzi GHORBEL
-                </h2>
-                <h4>Expert Marketing Digital- Directeur Conseil Pi2r
-
-                </h4>
-                <h5> -Tunisie –
-                </h5>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/ramzi-ghorbel-2b726930/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/aymen.jpg">
-                </ion-thumbnail>
-                <h2>Aymen TURKI
-                </h2>
-                <h4>General Manager- Web First Rank
-
-                </h4>
-                <h5> -Tunisie –
-                </h5>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/webfirstrank/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/bou.jpg">
-                </ion-thumbnail>
-                <h2>sana BOUAICHA
-                </h2>
-                <h4>Digital Project Manager- Web First Rank
-
-                </h4>
-                <h5> -Tunisie –
-                </h5>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="inkedin.com/in/sana-bouaicha-b444b58a/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-            </ion-item>
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/slim.jpg">
-                </ion-thumbnail>
-                <h2>slim MESFAR
-                </h2>
-                <h4>Formateur & coach Agile
-
-                </h4>
-                <h5> -Tunisie –
-                </h5>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/slimmesfar/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-            </ion-item>
-
-
-
-            <ion-item>
-                <ion-thumbnail item-start>
-                    <img src="assets/imgs/sy.jpg">
-                </ion-thumbnail>
-                <h2>Sylvain FLENDER
-
-                </h2>
-                <h4>Fondateur THE NEW ANTHROPOLOGY
-
-                </h4>
-                <h5> -France –
-
-                </h5>
-                <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/sylvain-flender-7178381/?originalSubdomain=fr" target="blank_">
-              <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-            </button>
-            </ion-item>
 
         </ion-list>
+
+
+
+
     </div>
 </ion-content>

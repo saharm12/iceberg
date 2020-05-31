@@ -35,6 +35,12 @@ import { BjuryPage } from '../pages/bjury/bjury';
 import { ReglePage } from '../pages/regle/regle';
 import { MapPage } from '../pages/map/map';
 import { LaureatProvider } from '../providers/laureat/laureat';
+import { Geolocation } from '@ionic-native/geolocation';
+import { CandidatProvider } from '../providers/candidat/candidat';
+import { FileUploadModule } from 'ng2-file-upload';
+import { JuryProvider } from '../providers/jury/jury';
+import { SpeakerProvider } from '../providers/speaker/speaker';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -68,7 +74,8 @@ import { LaureatProvider } from '../providers/laureat/laureat';
   ],
   imports: [
     BrowserModule, 
-    IonicModule.forRoot(MyApp), HttpClientModule
+    IonicModule.forRoot(MyApp), HttpClientModule,
+    FileUploadModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -111,7 +118,11 @@ import { LaureatProvider } from '../providers/laureat/laureat';
     {provide:  ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,ProvidersRestExpoProvider,
     PartProvider,
-    LaureatProvider 
+    LaureatProvider,
+    Geolocation,
+    CandidatProvider,
+    JuryProvider,
+    SpeakerProvider 
   
   ]
 })

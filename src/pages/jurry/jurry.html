@@ -6,214 +6,34 @@
 -->
 <ion-header>
     <ion-navbar>
-        <ion-title>jurry</ion-title>
+        <ion-title>Jury</ion-title>
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+
+
+
+<ion-content padding class="jury">
     <ion-list>
-        <ion-item>
+        <ion-item *ngFor="let ju of jurys">
+
             <ion-thumbnail item-left>
-
-                <img src="assets/imgs/soniaa.jpg">
+                <img *ngIf="ju.image!=null" src="{{base_url}}{{ju.image}}">
             </ion-thumbnail>
-            <h2>Logani Sonia</h2>
-            <h3>Présidente de Jury </h3>
-            <p>– Tunisie –</p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/sonialogani/" target="blank_">
-        <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-        </button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-left>
 
-                <img src="assets/imgs/Nor.jpg">
-            </ion-thumbnail>
-            <h2>Ben Dahmen Moulahi Norchene</h2>
-
-            <p>– Tunisie –</p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/norchenebendahmane/" target="blank_">
-      <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-      </button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-left>
-
-                <img src="assets/imgs/wa.jpg">
-            </ion-thumbnail>
-            <h2>Berrayana Wassel</h2>
-
-            <p>– Tunisie –</p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/berrayana/" target="blank_">
-    <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-    </button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-left>
-
-                <img src="assets/imgs/madame.jpg">
-            </ion-thumbnail>
-            <h2>Krid Hosni</h2>
-
-            <p>– Tunisie –</p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/hosnikridgargouri/" target="blank_">
-  <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-  </button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-left>
-
-                <img src="assets/imgs/nizar.jpg">
-            </ion-thumbnail>
-            <h2>Charri Nizar</h2>
-
-            <p>– Tunisie –</p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/nizarchaari/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-left>
-
-                <img src="assets/imgs/koli.jpg">
-            </ion-thumbnail>
-            <h2>Kooli Walid</h2>
-
-            <p>– Tunisie –</p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/search/results/all/?keywords=KOOLI%20Walid&origin=GLOBAL_SEARCH_HEADER" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-left>
-
-                <img src="assets/imgs/kh.jpg">
-            </ion-thumbnail>
-            <h2>Khabbab Hadhri</h2>
-
-            <p>– Tunisie –</p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/khabbabhadhri/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-left>
-
-                <img src="assets/imgs/badis.jpg">
-            </ion-thumbnail>
-            <h2>Ben Amor Badis</h2>
-
-            <p>– Tunisie –</p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/bedisba/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-left>
-
-                <img src="assets/imgs/bouba.jpg">
-            </ion-thumbnail>
-            <h2>Boubaker Nobel El Houssine</h2>
-
-            <p>– Tunisie –</p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/nboubaker/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-left>
-
-                <img src="assets/imgs/kais.jpg">
-            </ion-thumbnail>
-            <h2> Ben Sedrine Kais</h2>
-
-            <p>– Tunisie –</p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/kaisb1/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-left>
-
-                <img src="assets/imgs/bahia.jpg">
-            </ion-thumbnail>
-            <h2> Nar Bahia</h2>
-
-            <p>– Tunisie –</p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/bahianar/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-left>
-
-                <img src="assets/imgs/foued.png">
-            </ion-thumbnail>
-            <h2> Jouini Fouad</h2>
-
-            <p>– Tunisie –</p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/foued-jouini-81175943/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-        </ion-item>
-
-        <ion-item>
-            <ion-thumbnail item-left>
-
-                <img src="assets/imgs/aymenn.jpg">
-            </ion-thumbnail>
-            <h2> Loukil Aymen
+            <h2>{{ju.nom_jury}} {{ju.prenom_jury}}
             </h2>
+            <h3>{{ju.pays}}</h3>
+            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="{{ju.profil_jury}}" target="blank_">
+                    <ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
+                    </button>
 
-            <p>– France –
-            </p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/aymenloukil/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
+
+
+
+
+
+
         </ion-item>
-        <ion-item>
-            <ion-thumbnail item-left>
-
-                <img src="assets/imgs/hichem.jpg">
-            </ion-thumbnail>
-            <h2> Amrani Hichem
-            </h2>
-
-            <p>–Maroc –
-            </p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/hichamelamrani/?originalSubdomain=tn" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-left>
-
-                <img src="assets/imgs/omar.jpg">
-            </ion-thumbnail>
-            <h2> Berhili Omar
-            </h2>
-
-            <p>–Maroc –
-            </p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/omar-berhil-a6778650/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-        </ion-item>
-        <ion-item>
-            <ion-thumbnail item-left>
-
-                <img src="assets/imgs/mhd.jpg">
-            </ion-thumbnail>
-            <h2> Mrabet Mohamed
-            </h2>
-
-            <p>–France –
-            </p>
-            <button ion-button class="ion-button-block-outline icon-only" fill="" color="transparent" class="ion-float-right"><a href="https://www.linkedin.com/in/mohamed-mrabet/" target="blank_">
-<ion-icon name="logo-linkedin" class="ion-float-right" style="color:white"></ion-icon></a>
-</button>
-        </ion-item>
-
     </ion-list>
-
 </ion-content>
