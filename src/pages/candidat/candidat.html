@@ -26,9 +26,9 @@
             </ion-item>
 
 
-            <!-- <ion-item>
+            <ion-item>
                 <ion-label floating color="black"> Nom de la société / agence</ion-label>
-                <ion-input type="text"></ion-input>
+                <ion-input type="text" [(ngModel)]="ste" [ngModelOptions]="{standalone: true}"></ion-input>
             </ion-item>
 
             <ion-item>
@@ -48,7 +48,7 @@
 
             <ion-item>
                 <ion-label floating color="black"> Email*</ion-label>
-                <ion-input type="text"></ion-input>
+                <ion-input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"></ion-input>
             </ion-item>
 
             <ion-item>
@@ -73,7 +73,7 @@
                 </ion-select>
             </ion-item>-->
 
-            <!--<ion-item>
+            <ion-item>
                 <ion-toggle color="secondary"></ion-toggle>
                 <ion-label>J’ai lu et approuvé le règlement de TUNISIA DIGITAL AWARDS</ion-label>
 
@@ -83,7 +83,7 @@
 
                 <ion-label>Frais de candidature 300 DHT (150 DHT / catégorie+ 150 DHT Diner soirée ( TVA 19%)</ion-label>
                 <ion-toggle color="secondary"></ion-toggle>
-            </ion-item>-->
+            </ion-item>
 
             <ion-row>
                 <ion-col>

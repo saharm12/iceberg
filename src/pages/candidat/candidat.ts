@@ -22,7 +22,8 @@ export class CandidatPage {
   uploadedFile:File ;
   public uploader:FileUploader ;
  fileURL="";
-
+ste=""; 
+email=""; 
   constructor(private CanditProv: CandidatProvider ,public navCtrl: NavController, public navParams: NavParams,private http:HttpClient) {
    // const authHeader: Array<{
     //  name: string;
@@ -86,6 +87,7 @@ export class CandidatPage {
 let data = new FormData(); 
 
   data.append('userfile',this.uploadedFile);
+  data.append('candidatEmail',this.email); 
   this.http.post('http://localhost:3000/candidat/addfile',data).subscribe(data=>{
   let result:any =data; 
     console.log(result);
