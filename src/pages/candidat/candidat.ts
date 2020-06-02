@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import {  FileUploader  } from 'ng2-file-upload';
 import { CandidatProvider } from '../../providers/candidat/candidat';
 import {  FormGroup ,FormControl, Validators} from "@angular/forms";
-
+import {Candidat} from "./candidat.model"
 /**
  * Generated class for the CandidatPage page.
  *
@@ -21,22 +21,22 @@ export class CandidatPage {
   categories=[];
   uploadedFile:File ;
   public uploader:FileUploader ;
+  canditModel : Candidat;
  fileURL="";
 ste=""; 
-email=""; 
+email="";
+respon="";
+adresse="";
+codepostale="";
+GSM="";
+siteweb="";
+client="";
+categorie="";
+
+
   constructor(private CanditProv: CandidatProvider ,public navCtrl: NavController, public navParams: NavParams,private http:HttpClient) {
-   // const authHeader: Array<{
-    //  name: string;
-      //value: string;
-  //}> = [];
-  
-  //let token = localStorage.getItem('token');
-  //authHeader.push({name: 'x-access-token', value: token});
- // const uploadOptions = {headers : authHeader};
-  //adding uploader service url
-  //this.uploader = new FileUploader({ url: 'http://localhost:3000/candidat/addfile',itemAlias: 'userfile'});
-  //this.uploader.setOptions(uploadOptions);
-    
+
+    this.canditModel= new Candidat();
   
   this.categories=[
       {
@@ -85,10 +85,20 @@ email="";
   {  // this.uploader.uploadAll();
 
 let data = new FormData(); 
+data.append('ste',this.ste); 
+data.append('respon',this.respon); 
+data.append('adresse',this.adresse); 
+data.append('codepostale',this.codepostale); 
+data.append('candidatEmail',this.email); 
+data.append('GSM',this.GSM); 
+data.append('siteweb',this.siteweb); 
+data.append('client',this.client); 
+data.append('categorie',this.categorie); 
+data.append('userfile',this.uploadedFile);
+ 
+ 
 
-  data.append('userfile',this.uploadedFile);
-  data.append('candidatEmail',this.email); 
-  this.http.post('http://localhost:3000/candidat/addfile',data).subscribe(data=>{
+  this.http.post('http://localhost:3000/candidat/addfile',data ).subscribe(data=>{
   let result:any =data; 
     console.log(result);
   })
