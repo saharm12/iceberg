@@ -7,6 +7,7 @@ import {PopoverController} from 'ionic-angular';
 import {InfluenceurPage}from '../influenceur/influenceur';
 import { ReglePage } from '../regle/regle';
 import { MapPage } from '../map/map';
+import { EnquetePage } from '../enquete/enquete';
 /**
  * Generated class for the ConcoursPage page.
  *
@@ -36,6 +37,10 @@ export class ConcoursPage {
   }
   vieww(){
     this.navCtrl.push(CategoriePage);
+  }
+  Enquete(){
+    this.navCtrl.push(EnquetePage
+      );
   }
   afficher(){
     this.navCtrl.push(LaureatPage);

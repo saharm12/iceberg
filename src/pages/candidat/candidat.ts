@@ -20,6 +20,8 @@ import {Candidat} from "./candidat.model"
 export class CandidatPage {
   categories=[];
   uploadedFile:File ;
+  secondFile :File ; 
+
   public uploader:FileUploader ;
   canditModel : Candidat;
  fileURL="";
@@ -74,6 +76,10 @@ categorie="";
 }
 
 
+secondFileUplouad(element) {
+  this.secondFile = element.target.files[0];
+}
+
 
    /*this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
   };*/
@@ -83,7 +89,9 @@ categorie="";
 
   AjouterCandidat()
   {  // this.uploader.uploadAll();
-
+let userFiles:File[]=[]; 
+userFiles.push(this.uploadedFile); 
+userFiles.push(this.secondFile); 
 let data = new FormData(); 
 data.append('ste',this.ste); 
 data.append('respon',this.respon); 
@@ -94,11 +102,12 @@ data.append('GSM',this.GSM);
 data.append('siteweb',this.siteweb); 
 data.append('client',this.client); 
 data.append('categorie',this.categorie); 
-data.append('userfile',this.uploadedFile);
+data.append('firstfile',this.uploadedFile);
+data.append('secondfile',this.secondFile); 
  
  
 
-  this.http.post('http://localhost:3000/candidat/addfile',data ).subscribe(data=>{
+  this.http.post('http://localhost:3000/candidat/addfiles',data ).subscribe(data=>{
   let result:any =data; 
     console.log(result);
   })

@@ -40,7 +40,10 @@ import { CandidatProvider } from '../providers/candidat/candidat';
 import { FileUploadModule } from 'ng2-file-upload';
 import { JuryProvider } from '../providers/jury/jury';
 import { SpeakerProvider } from '../providers/speaker/speaker';
-
+import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
+import { ChatPage } from '../pages/chat/chat';
+import { EnquetePage } from '../pages/enquete/enquete';
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 @NgModule({
   declarations: [
     MyApp,
@@ -68,23 +71,29 @@ import { SpeakerProvider } from '../providers/speaker/speaker';
     BjuryPage,
     ReglePage,
     MapPage,
+    ChatPage,
+    EnquetePage
   
     
    
   ],
+
   imports: [
     BrowserModule, 
     IonicModule.forRoot(MyApp), HttpClientModule,
-    FileUploadModule
+    FileUploadModule, 
+    SocketIoModule.forRoot(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage, 
     MainPage, 
+    EnquetePage,
     RegisterPage,
     InscriptionPage,
     MeetingPage,
+    ChatPage,
     ConcoursPage,
     CandidatPage,
     ExposantPage,

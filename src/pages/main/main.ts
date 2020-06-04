@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,PopoverController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,PopoverController, AlertController } from 'ionic-angular';
 import { InscriptionPage } from '../inscription/inscription';
 import { MeetingPage } from '../meeting/meeting';
 import { ConcoursPage } from '../concours/concours';
+import { ChatPage } from '../chat/chat';
 
 /**
  * Generated class for the MainPage page.
@@ -19,7 +20,7 @@ import { ConcoursPage } from '../concours/concours';
 })
 export class MainPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl:AlertController ) {
   }
 
   ionViewDidLoad() {
@@ -39,5 +40,34 @@ export class MainPage {
   
     concours(){
       this.navCtrl.push(ConcoursPage);
+    }
+
+    Chat(){
+      let alert = this.alertCtrl.create({
+        'title':'Saisir votre nom', 
+        inputs:[{
+          'name':'NickName', 
+          'value':''
+        }],
+        buttons:[{
+          text:'Joindre Chat', 
+          handler:data=>{
+            this.navCtrl.push(ChatPage,{name:data.NickName})
+            console.log(data); 
+          },
+          
+        }, 
+        {
+          text:'Annuler', 
+          handler:data=>{
+            //this.navCtrl.push(ChatPage,{name:data.NickName})
+            console.log(data); 
+          },
+          
+        }]
+
+      })
+      alert.present(); 
+      //this.navCtrl.push(ChatPage);
     }
 }
