@@ -43,6 +43,7 @@ import { SpeakerProvider } from '../providers/speaker/speaker';
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 import { ChatPage } from '../pages/chat/chat';
 import { EnquetePage } from '../pages/enquete/enquete';
+import { DocumentProvider } from '../providers/document/document';
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 @NgModule({
   declarations: [
@@ -131,7 +132,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     Geolocation,
     CandidatProvider,
     JuryProvider,
-    SpeakerProvider 
+    SpeakerProvider,
+    DocumentProvider 
   
   ]
 })

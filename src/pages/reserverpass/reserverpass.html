@@ -70,19 +70,22 @@
                 </ion-select>
             </ion-item>
 
-            <div *ngIf="paiementCheque">
+            <div>
                 <ion-item>
                     <ion-label floating color="black">Chéque N° </ion-label>
                     <ion-input [(ngModel)]="modelpart.num_cheque" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
                 </ion-item>
             </div>
             <ion-row>
+
                 <ion-col>
                     <button ion-button color="primary" block large round>Soumettre </button>
 
                 </ion-col>
             </ion-row>
-
+            <h5> • Télècharger le bon de commande convenable au soirée choisi par
+                <a (click)="telecharger()"> <strong>ici </strong></a>
+            </h5>
         </ion-list>
     </form>
 

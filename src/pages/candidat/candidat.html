@@ -12,7 +12,27 @@
 
 <ion-content>
 
+    <ion-card>
+        <ion-card-content>
 
+
+            <h3> • Si vous voulez des prix pour plus d’une catégorie, merci de remplir un formulaire d’inscription pour chacune.</h3>
+
+
+            <h3> • Les informations communiquées seront strictement et exclusivement utilisées par le jury, afin d’évaluer la candidature d’une entreprise et ne seront en aucun cas divulguées ou utilisées sans le consentement de l’entreprise. </h3>
+
+
+            <h3> • Merci de lire le réglement attentivement avant l'inscription
+                <a (click)="lire()"> <strong> ici </strong></a>
+            </h3>
+
+            <h3> • Télècharger le dossier de candidature par
+                <a (click)="telecharger()"> <strong>ici </strong></a>
+            </h3>
+
+
+        </ion-card-content>
+    </ion-card>
 
     <ion-list>
         <form (ngSubmit)="AjouterCandidat()">

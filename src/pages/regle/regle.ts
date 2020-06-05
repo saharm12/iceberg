@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ConcoursPage } from '../concours/concours';
+import { InscriptionPage } from '../inscription/inscription';
 
 /**
  * Generated class for the ReglePage page.
@@ -24,5 +25,8 @@ export class ReglePage {
   }
 fermer(){
   this.navCtrl.push(ConcoursPage);
+}
+inscrire(){
+  this.navCtrl.push(InscriptionPage);
 }
 }

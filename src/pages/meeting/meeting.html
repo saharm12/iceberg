@@ -14,19 +14,36 @@
 
     <div padding>
         <ion-segment [(ngModel)]="Meeting">
+            <ion-segment-button value="document">
+                Document
+            </ion-segment-button>
             <ion-segment-button value="programme">
                 Programme
             </ion-segment-button>
             <ion-segment-button value="speakers">
                 Speakers
             </ion-segment-button>
-            <ion-segment-button value="document">
-                Document
-            </ion-segment-button>
         </ion-segment>
     </div>
 
     <div [ngSwitch]="Meeting">
+        <ion-list *ngSwitchCase="'document'">
+            <ion-item *ngFor="let doc of documents">
+                <h2>{{doc.nom_fichier}}</h2>
+                <a download href="{{base_url}}/{{doc.fichier}}"> Cliquer ici pour télècharger le dossier</a>
+            </ion-item>
+
+
+        </ion-list>
+        <ion-list *ngSwitchCase="'programme'">
+            <ion-item *ngFor="let prog of programme">
+
+
+            </ion-item>
+
+
+        </ion-list>
+
         <ion-list *ngSwitchCase="'speakers'">
             <ion-item *ngFor="let speak of speake">
                 <ion-thumbnail item-start>
@@ -43,14 +60,8 @@
         </ion-list>
 
 
-        <ion-list *ngSwitchCase="'programme'">
-            <ion-item *ngFor="let prog of programme">
 
 
-            </ion-item>
-
-
-        </ion-list>
 
 
 

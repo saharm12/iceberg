@@ -2,6 +2,7 @@ import { Component ,OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams ,  AlertController} from 'ionic-angular';
 import { ProvidersRestExpoProvider } from '../../providers/providers-rest-expo/providers-rest-expo';
 import {Exposant} from "./exposant.model";
+import { MeetingPage } from '../meeting/meeting';
 
 
 
@@ -88,6 +89,9 @@ Soumettre(){
        });
         alert.present();
       
+      }
+      telecharger(){
+        this.navCtrl.push(MeetingPage);
       }
       
   

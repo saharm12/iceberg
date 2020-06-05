@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpeakerProvider} from '../../providers/speaker/speaker';
+import { DocumentProvider} from '../../providers/document/document';
 
 /**
  * Generated class for the MeetingPage page.
@@ -17,10 +18,10 @@ import { SpeakerProvider} from '../../providers/speaker/speaker';
 export class MeetingPage {
   speake= []; 
   programmes=[];  
-
+documents=[];
   base_url="http://localhost:3000"
 
-  constructor(private speakProv: SpeakerProvider,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private docProv:DocumentProvider,private speakProv: SpeakerProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -28,7 +29,7 @@ export class MeetingPage {
   }
   ngOnInit() {
     this.getSpeak();
-   
+   this.getDocument();
   }
 
   getSpeak()
@@ -42,5 +43,22 @@ export class MeetingPage {
   }
 } 
 
+getDocument(){
+  {   
+    this.docProv.getDocument().subscribe(data=>{
+    
+
+      let result:any = data; 
+      console.log(result.laureats); 
+     
+
+      this.documents = result.document; 
+      
+
+    })
+ }
+
+
+ }
 
 }

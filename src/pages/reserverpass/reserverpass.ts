@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams  , AlertController} from 'ionic-angular';
 import {Participant} from "./reserver.model";
 import { PartProvider } from '../../providers/part/part';
+import { MeetingPage } from '../meeting/meeting';
 /**
  * Generated class for the ReserverpassPage page.
  *
@@ -102,5 +103,10 @@ this.modelpart = new Participant();
   
 
   
+
+
+      telecharger(){
+        this.nav.push(MeetingPage);
+      } 
 
 }

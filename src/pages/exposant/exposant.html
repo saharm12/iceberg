@@ -80,6 +80,11 @@
                 <ion-input [(ngModel)]="expoModel.cheque" type="text" name="cheque" [ngModelOptions]="{standalone: true}"></ion-input>
             </ion-item>
 
+
+            <h5> • Télècharger le bon de commande de réservation de stand par
+                <a (click)="telecharger()"> <strong>ici </strong></a>
+            </h5>
+
             <ion-row>
                 <ion-col>
                     <button ion-button color="primary" block large round>Soumettre </button>

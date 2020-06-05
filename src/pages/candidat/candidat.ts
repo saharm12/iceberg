@@ -5,6 +5,8 @@ import {  FileUploader  } from 'ng2-file-upload';
 import { CandidatProvider } from '../../providers/candidat/candidat';
 import {  FormGroup ,FormControl, Validators} from "@angular/forms";
 import {Candidat} from "./candidat.model"
+import { ReglePage } from '../regle/regle';
+import { MeetingPage } from '../meeting/meeting';
 /**
  * Generated class for the CandidatPage page.
  *
@@ -49,7 +51,23 @@ categorie="";
       },
       {
         title:"Best E.shop"
+      },
+      {
+        title:"Best Digital Campaign"
+      },
+      {
+        title:"Best Digital Start Up "
+      },
+      {
+        title:"Best SEO / SEA of the year"
+      },
+      {
+        title:"Best Social Media Influencer"
+      },
+      {
+        title:"Best Jury Awards"
       }
+
     ]
    
   }
@@ -123,6 +141,13 @@ data.append('secondfile',this.secondFile);
    // }
  //})
  
+}
+lire(){
+  this.navCtrl.push(ReglePage);
+}
+
+telecharger(){
+  this.navCtrl.push(MeetingPage);
 }
 
   
