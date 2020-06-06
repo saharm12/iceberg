@@ -44,6 +44,8 @@ import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 import { ChatPage } from '../pages/chat/chat';
 import { EnquetePage } from '../pages/enquete/enquete';
 import { DocumentProvider } from '../providers/document/document';
+import { SponsorsPage } from '../pages/sponsors/sponsors';
+import{SponsorsProvider} from '../providers/sponsors/sponsors'
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 @NgModule({
   declarations: [
@@ -73,7 +75,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     ReglePage,
     MapPage,
     ChatPage,
-    EnquetePage
+    EnquetePage,
+    SponsorsPage
   
     
    
@@ -100,6 +103,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     ExposantPage,
     ParticipantPage,
     ReserverpassPage,
+    SponsorsPage,
     JurryPage,
     LaureatPage,
     FirstPage,
@@ -133,7 +137,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     CandidatProvider,
     JuryProvider,
     SpeakerProvider,
-    DocumentProvider 
+    DocumentProvider,
+    SponsorsProvider 
   
   ]
 })

@@ -8,6 +8,7 @@ import {InfluenceurPage}from '../influenceur/influenceur';
 import { ReglePage } from '../regle/regle';
 import { MapPage } from '../map/map';
 import { EnquetePage } from '../enquete/enquete';
+import { SponsorsPage } from '../sponsors/sponsors';
 /**
  * Generated class for the ConcoursPage page.
  *
@@ -44,6 +45,9 @@ export class ConcoursPage {
   }
   afficher(){
     this.navCtrl.push(LaureatPage);
+  }
+  Sponsors(){
+    this.navCtrl.push(SponsorsPage);
   }
   regle(event:any){
     let popover = this.popoverCtrl.create(ReglePage,{}, {cssClass: 'contact-popover'});
