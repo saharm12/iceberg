@@ -4,17 +4,56 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+
 <ion-header>
+
     <ion-navbar>
+        <button ion-button menuToggle icon-only>
+            <ion-icon name='menu'></ion-icon>
+          </button>
         <ion-title>TDA Concours</ion-title>
     </ion-navbar>
+
 </ion-header>
 
 
 <ion-content padding class="concours">
 
     <ion-list>
-        <ion-item>
+
+        <button ion-item>
+            <ion-icon name="md-clipboard" item-start (click)="regle()"></ion-icon>
+            Réglement
+          </button>
+
+        <button ion-item (click)="vieww()">
+            <ion-icon name="md-card" item-start></ion-icon>
+           <p> Catégories et leurs critéres de sélection</p>
+          </button>
+
+        <button ion-item (click)="view()">
+            <ion-icon name="ios-people" item-start></ion-icon>
+           Jury
+          </button>
+
+        <button ion-item (click)="Sponsors()">
+            <ion-icon name="ios-person" item-start></ion-icon>
+           Sponsors & Partenaires
+          </button>
+        <button ion-item (click)="afficher()">
+            <ion-icon name="md-trophy" item-start></ion-icon>
+          lauréats
+          </button>
+        <button ion-item (click)="viiew()">
+            <ion-icon name="ios-map" item-start></ion-icon>
+           Google Maps
+          </button>
+        <button ion-item (click)="Enquete()">
+            <ion-icon name="md-happy" item-start></ion-icon>
+        Enquete de satisfaction
+          </button>
+
+        <!-- <ion-item>
             <h2> Réglementation</h2>
             <button ion-button clear item-end (click)="regle()">Voir</button>
         </ion-item>
@@ -33,7 +72,7 @@
             <button ion-button clear item-end (click)="view()">Voir</button>
         </ion-item>
         <ion-item>
-            <h2>Sponsors & partenaires</h2>
+            <h2>Sponsors </h2>
             <button ion-button clear item-end (click)="Sponsors()">Voir</button>
         </ion-item>
         <ion-item>
@@ -51,7 +90,7 @@
         <ion-item>
             <h2> Google Maps</h2>
             <button ion-button clear item-end (click)="viiew()">Voir</button>
-        </ion-item>
+        </ion-item>-->
     </ion-list>
 
 </ion-content>

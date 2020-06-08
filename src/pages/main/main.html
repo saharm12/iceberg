@@ -5,36 +5,45 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar color="primary">
-        <ion-title>main</ion-title>
+
+    <ion-navbar>
+        <button ion-button menuToggle icon-only>
+            <ion-icon name='menu'></ion-icon>
+          </button>
+        <ion-title>Accueil</ion-title>
     </ion-navbar>
 
 </ion-header>
+
+
 <ion-content padding class="main">
+    <!--<ion-card-content>-->
+
+    <!-- </ion-card-content>-->
     <ion-grid>
+        <ion-row>
+            <ion-col>
+                <button (click)="Meeting()">
+            <img src="assets/imgs/tdamett.png"/></button>
+            </ion-col>
+        </ion-row>
 
 
         <ion-row>
             <ion-col>
-                <button ion-button color="primary" block large round (click)="Meeting()" outline>TDA Meeting </button>
+                <button (click)="concours()"><img src="assets/imgs/cons.png"/> </button>
             </ion-col>
         </ion-row>
 
         <ion-row>
             <ion-col>
-                <button ion-button color="primary" block large round (click)="concours()" outline>TDA Concours </button>
+                <button (click)="inscription()"><img src="assets/imgs/inscrip.png"/> </button>
             </ion-col>
         </ion-row>
 
         <ion-row>
             <ion-col>
-                <button ion-button color="primary" block large round (click)="inscription()" outline>Inscription </button>
-            </ion-col>
-        </ion-row>
-
-        <ion-row>
-            <ion-col>
-                <button ion-button color="primary" block large round (click)="Chat()" outline>Chatter</button>
+                <button (click)="Chat()"><img src="assets/imgs/chatter.png"/></button>
             </ion-col>
         </ion-row>
 

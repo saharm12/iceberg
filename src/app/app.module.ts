@@ -46,6 +46,7 @@ import { EnquetePage } from '../pages/enquete/enquete';
 import { DocumentProvider } from '../providers/document/document';
 import { SponsorsPage } from '../pages/sponsors/sponsors';
 import{SponsorsProvider} from '../providers/sponsors/sponsors'
+
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     MyApp,
     HomePage, 
     MainPage, 
+    
     EnquetePage,
     RegisterPage,
     InscriptionPage,

@@ -29,17 +29,17 @@ export class MainPage {
   inscription()
   {
       //this.navCtrl.push(MainPage) 
-      this.navCtrl.push(InscriptionPage) ; 
+      this.navCtrl.setRoot(InscriptionPage) ; 
     }
 
     Meeting()
   {
    
-      this.navCtrl.push(MeetingPage) ; 
+      this.navCtrl.setRoot(MeetingPage) ; 
     }
   
     concours(){
-      this.navCtrl.push(ConcoursPage);
+      this.navCtrl.setRoot(ConcoursPage);
     }
 
     Chat(){
@@ -70,4 +70,5 @@ export class MainPage {
       alert.present(); 
       //this.navCtrl.push(ChatPage);
     }
+ 
 }
