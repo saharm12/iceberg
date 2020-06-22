@@ -15,7 +15,7 @@ export class PartProvider {
   constructor(public http: HttpClient) {
     console.log('Hello PartProvider Provider');
   }
-  Register(nom, prenom, email, adresse, code_postale, raison_sociale, TVA, Ville, reserver, programme, paiement, num_cheque){
+  Register(nom, prenom, email, adresse, code_postale, raison_sociale, TVA, Ville, reserver, programme, type_participant,paiement, num_cheque){
     return this.http.post(this.BASE_URL+'/Register',{
       "nom" :nom,
       "prenom" : prenom,
@@ -27,6 +27,7 @@ export class PartProvider {
       "Ville": Ville,
       "reserver": reserver,
       "programme": programme,
+     "type_participant": type_participant,
       "paiement": paiement,
       "num_cheque": num_cheque,
     });

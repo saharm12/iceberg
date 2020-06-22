@@ -4,6 +4,10 @@ import { InscriptionPage } from '../inscription/inscription';
 import { MeetingPage } from '../meeting/meeting';
 import { ConcoursPage } from '../concours/concours';
 import { ChatPage } from '../chat/chat';
+import { MapPage } from '../map/map';
+import { EnquetePage } from '../enquete/enquete';
+//import { SponsorsPage} from '../Sponsors/sponsors';
+import { LaureatPage } from '../laureat/laureat';
 
 /**
  * Generated class for the MainPage page.
@@ -41,7 +45,21 @@ export class MainPage {
     concours(){
       this.navCtrl.setRoot(ConcoursPage);
     }
-
+    viiew(){
+      this.navCtrl.setRoot(MapPage);
+    }
+  
+    
+   
+    Enquete(){
+      this.navCtrl.setRoot(EnquetePage);
+    }
+    afficher(){
+      this.navCtrl.setRoot(LaureatPage);
+    }
+   // Sponsors(){
+    //  this.navCtrl.setRoot(SponsorsPage);
+   // }
     Chat(){
       let alert = this.alertCtrl.create({
         'title':'Saisir votre nom', 

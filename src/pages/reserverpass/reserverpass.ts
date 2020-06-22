@@ -19,16 +19,13 @@ export class ReserverpassPage {
  paiement=[];
  createSuccess = false;
  paiementCheque : boolean = false;
-
+ type_part=[];
 
   modelpart: Participant;
 
-
+  programme=[]
   constructor(private alertCtrl: AlertController ,public nav: NavController, public navParams: NavParams, private Part:PartProvider ){
     
-  
-   
-
     this.paiement=[
       {
         title:"Virement"
@@ -38,6 +35,30 @@ export class ReserverpassPage {
       },
       {
         title:"Espèce"
+      }
+    ]
+
+    this.type_part=[
+      {
+        title:"Etudiant"
+      },
+      {
+        title:"Enseignant"
+      },
+      {
+        title:"Professionel"
+      }
+    ]
+    
+    this.programme=[
+      {
+        title:"TDA or"
+      },
+      {
+        title:"TDA silver"
+      },
+      {
+        title:"TDA Diamond"
       }
     ]
   
@@ -55,18 +76,8 @@ this.modelpart = new Participant();
 
   }
 
-  Soumettre(){
-    
-    if (this.modelpart.programme != "TDA/or" && this.modelpart.programme != "TDA/silver" && this.modelpart.programme != "TDA/Diamand" ){
-      this.showPopup("Echec", 'champ programme incorrecte  ');
-    }  else { 
-             
-        //(this.modelpart.paiement == "Chéque" ){
-             //this.paiementCheque = true;
-             
-            
-        
-  this.Part.Register(this.modelpart.nom, this.modelpart.prenom, this.modelpart.email, this.modelpart.adresse, this.modelpart.code_postale, this.modelpart.raison_sociale, this.modelpart.TVA, this.modelpart.Ville, this.modelpart.reserver, this.modelpart.programme, this.modelpart.paiement, this.modelpart.num_cheque)
+  Soumettre(){  
+  this.Part.Register(this.modelpart.nom, this.modelpart.prenom, this.modelpart.email, this.modelpart.adresse, this.modelpart.code_postale, this.modelpart.raison_sociale, this.modelpart.TVA, this.modelpart.Ville, this.modelpart.reserver, this.modelpart.programme ,this.modelpart.type_participant, this.modelpart.paiement, this.modelpart.num_cheque)
     .subscribe ( success => {
       if (success) {
         this.createSuccess = true;
@@ -79,7 +90,7 @@ this.modelpart = new Participant();
        error => {
          this.showPopup("Error", error);
        });
-            }
+            
   
     }
       showPopup(title, text) {

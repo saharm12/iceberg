@@ -10,6 +10,7 @@ export class Participant {
    Ville:string;
    reserver:number;
    programme:string;
+   type_participant:string;
    paiement:string;
    num_cheque:number;
 

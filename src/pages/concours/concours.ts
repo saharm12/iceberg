@@ -4,11 +4,11 @@ import {JurryPage}    from   '../../pages/jurry/jurry';
 import {LaureatPage} from   '../../pages/laureat/laureat';
 import { CategoriePage } from '../categorie/categorie';
 import {PopoverController} from 'ionic-angular';
-import {InfluenceurPage}from '../influenceur/influenceur';
+
 import { ReglePage } from '../regle/regle';
-import { MapPage } from '../map/map';
-import { EnquetePage } from '../enquete/enquete';
-import { SponsorsPage } from '../sponsors/sponsors';
+import { ExposantPage } from '../exposant/exposant';
+import { CandidatPage } from '../candidat/candidat';
+
 /**
  * Generated class for the ConcoursPage page.
  *
@@ -29,9 +29,8 @@ export class ConcoursPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ConcoursPage');
   }
-  viiew(){
-    this.navCtrl.push(MapPage);
-  }
+  
+  
 
   view(){
     this.navCtrl.push(JurryPage);
@@ -39,16 +38,13 @@ export class ConcoursPage {
   vieww(){
     this.navCtrl.push(CategoriePage);
   }
-  Enquete(){
-    this.navCtrl.push(EnquetePage
-      );
+  exposant(){
+    this.navCtrl.push(ExposantPage);
   }
-  afficher(){
-    this.navCtrl.push(LaureatPage);
+  candidat(){
+    this.navCtrl.push(CandidatPage);
   }
-  Sponsors(){
-    this.navCtrl.push(SponsorsPage);
-  }
+  
   regle(event:any){
     let popover = this.popoverCtrl.create(ReglePage,{}, {cssClass: 'contact-popover'});
   popover.present({

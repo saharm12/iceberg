@@ -22,8 +22,8 @@
 
     <div padding>
         <ion-segment [(ngModel)]="Meeting">
-            <ion-segment-button value="document">
-                Document
+            <ion-segment-button value="participant" (ionSelect)="participant()">
+                Participant
             </ion-segment-button>
             <ion-segment-button value="programme">
                 Programme
@@ -35,10 +35,10 @@
     </div>
 
     <div [ngSwitch]="Meeting">
-        <ion-list *ngSwitchCase="'document'">
-            <ion-item *ngFor="let doc of documents">
-                <h2>{{doc.nom_fichier}}</h2>
-                <a download href="{{base_url}}/{{doc.fichier}}"> Cliquer ici pour télècharger le dossier</a>
+        <ion-list *ngSwitchCase="'participant'">
+            <ion-item>
+                <!--  <h2>{{doc.nom_fichier}}</h2>
+                <a download href="{{base_url}}/{{doc.fichier}}"> Cliquer ici pour télècharger le dossier</a>-->
             </ion-item>
 
 

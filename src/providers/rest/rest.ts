@@ -34,13 +34,12 @@ export class RestProvider {
    return  this.http.get(this.BASE_URL+'/'+id,{headers:{'x-access-token':token}}) // appel de la requete de recupration des donnes utilisateurs 
   }
 
-  registerUser( name,firstname, email,password,confirmermdp){
+  registerUser( name,firstname, email,password){
     return this.http.post(this.BASE_URL+'/register',{
       'name':name,
       'firstname':firstname,
       'email':email,
       'password':password,
-       'confirmermdp' :confirmermdp
 
 
 

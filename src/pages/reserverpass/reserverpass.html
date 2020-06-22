@@ -58,15 +58,24 @@
             </ion-item>
 
 
+
             <ion-item>
-                <ion-label color="black"> Choix du programme</ion-label>
-                <ion-input [(ngModel)]="modelpart.programme" [ngModelOptions]="{standalone: true}" placeholder="TDA or/TDA silver/TDA Diamond" type="text"></ion-input>
+                <ion-label floating>Choix du programme*</ion-label>
+                <ion-select [(ngModel)]="modelpart.programme" [ngModelOptions]="{standalone: true}">
+                    <ion-option [value]="prog.title" *ngFor="let prog of programme">{{prog.title}}</ion-option>
+                </ion-select>
             </ion-item>
 
             <ion-item>
                 <ion-label floating>Methode de paiement*</ion-label>
                 <ion-select [(ngModel)]="modelpart.paiement" [ngModelOptions]="{standalone: true}">
-                    <ion-option (click)="Soumettre()" [value]="cat.title" *ngFor="let cat of paiement">{{cat.title}}</ion-option>
+                    <ion-option [value]="cat.title" *ngFor="let cat of paiement">{{cat.title}}</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Type de participants*</ion-label>
+                <ion-select [(ngModel)]="modelpart.type_participant" [ngModelOptions]="{standalone: true}">
+                    <ion-option [value]="typ.title" *ngFor="let typ of type_part">{{typ.title}}</ion-option>
                 </ion-select>
             </ion-item>
 

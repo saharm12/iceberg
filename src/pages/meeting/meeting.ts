@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpeakerProvider} from '../../providers/speaker/speaker';
 import { DocumentProvider} from '../../providers/document/document';
-
+import { ParticipantPage } from '../participant/participant';
+import {ReserverpassPage} from '../reserverpass/reserverpass';
 /**
  * Generated class for the MeetingPage page.
  *
@@ -29,7 +30,7 @@ documents=[];
   }
   ngOnInit() {
     this.getSpeak();
-   this.getDocument();
+  
   }
 
   getSpeak()
@@ -42,7 +43,9 @@ documents=[];
       })
   }
 } 
-
+participant(){
+  this.navCtrl.push(ReserverpassPage);
+}
 getDocument(){
   {   
     this.docProv.getDocument().subscribe(data=>{

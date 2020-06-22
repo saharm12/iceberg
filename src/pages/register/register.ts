@@ -39,7 +39,7 @@ registerForm :FormGroup ;
     if (this.registerForm.controls['password'].value != this.registerForm.controls['confirmPassword'].value ){
       this.showPopup("Echec", 'mot de passe et Confirmer mot de passe ne sont pas conforme veuillez vérifier!.');
     }else { 
-        this.Rest.registerUser(this.registerForm.controls['nom'].value,this.registerForm.controls['prenom'].value,this.registerForm.controls['email'].value,this.registerForm.controls['password'].value,this.registerForm.controls['confirmPassword'].value)
+        this.Rest.registerUser(this.registerForm.controls['nom'].value,this.registerForm.controls['prenom'].value,this.registerForm.controls['email'].value,this.registerForm.controls['password'].value)
         .subscribe( success => {
           if (success) {
             this.createSuccess = true;
