@@ -8,7 +8,7 @@ import { MapPage } from '../map/map';
 import { EnquetePage } from '../enquete/enquete';
 //import { SponsorsPage} from '../Sponsors/sponsors';
 import { LaureatPage } from '../laureat/laureat';
-
+import { DocumentPage } from '../document/document';
 /**
  * Generated class for the MainPage page.
  *
@@ -88,5 +88,7 @@ export class MainPage {
       alert.present(); 
       //this.navCtrl.push(ChatPage);
     }
- 
+   document(){
+     this.navCtrl.push(DocumentPage);
+   }
 }

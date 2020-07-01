@@ -10,47 +10,97 @@
     </ion-navbar>
 </ion-header>
 <ion-content>
-    <form (ngSubmit)="Soumettre()">
+    <form #f="ngForm" (ngSubmit)="Soumettre()">
         <ion-list inset>
             <ion-item>
                 <ion-label floating color="black"> Nom*</ion-label>
-                <ion-input [(ngModel)]="modelpart.nom" type="text" [ngModelOptions]="{standalone: true}"></ion-input>
+                <ion-input pattern="[a-zA-Z ]*" minlength="3" required #nom="ngModel" [(ngModel)]="modelpart.nom" type="text" [ngModelOptions]="{standalone: true}"></ion-input>
+
             </ion-item>
+            <div *ngIf="f.submitted && nom.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="nom.errors.required">champ nom est vide</p>
+                <p style="color: red;" *ngIf="nom.errors.minlength">champ nom doit contenir au moins 3 caractéres</p>
+                <p style="color: red;" *ngIf="nom.errors.pattern">champ nom doit contenir seulemenet des caractéres</p>
+
+            </div>
+
+            <!--<ion-item *ngIf="!nom.valid && nom.touched">
+                <p style="color: red;">champ nom est vide</p>
+
+            </ion-item>-->
+
 
             <ion-item>
                 <ion-label floating color="black"> Prénom*</ion-label>
-                <ion-input [(ngModel)]="modelpart.prenom" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input pattern="[a-zA-Z ]*" minlength="3" #prenom="ngModel" required [(ngModel)]="modelpart.prenom" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
             </ion-item>
+            <div *ngIf="f.submitted && prenom.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="prenom.errors.required">champ prenom est vide</p>
+                <p style="color: red;" *ngIf="prenom.errors.minlength">champ prenom doit contenir au moins 3 caractéres</p>
+                <p style="color: red;" *ngIf="prenom.errors.pattern">champ prenom doit contenir seulemenet des caractéres</p>
+
+            </div>
 
             <ion-item>
                 <ion-label floating color="black"> Email*</ion-label>
-                <ion-input [(ngModel)]="modelpart.email" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required [(ngModel)]="modelpart.email" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
             </ion-item>
+            <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="email.errors.required">champ nom est vide</p>
+                <p style="color: red;" *ngIf="email.errors.pattern">champ email est incorrecte</p>
+
+            </div>
 
             <ion-item>
                 <ion-label floating color="black"> Adresse*</ion-label>
-                <ion-input [(ngModel)]="modelpart.adresse" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input pattern="[a-zA-Z ]*" minlength="3" #adresse="ngModel" required [(ngModel)]="modelpart.adresse" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
             </ion-item>
+            <div *ngIf="f.submitted && adresse.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="adresse.errors.required">champ adresse est vide</p>
+                <p style="color: red;" *ngIf="adresse.errors.minlength">champ adresse doit contenir au moins 3 caractéres</p>
+                <p style="color: red;" *ngIf="adresse.errors.pattern">champ adresse doit contenir seulemenet des caractéres</p>
+
+            </div>
 
             <ion-item>
                 <ion-label floating color="black"> Code Postal*</ion-label>
-                <ion-input maxlength="4" [(ngModel)]="modelpart.code_postale" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input pattern="[^-?[0-9]\\d*(\\.\\d{1,2})?$]" #code_postale="ngModel" required maxlength="4" [(ngModel)]="modelpart.code_postale" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
             </ion-item>
+            <div *ngIf="f.submitted && code_postale.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="code_postale.errors.required">champ code postale est vide</p>
+                <p style="color: red;" *ngIf="code_postale.errors.maxlength">champ code postale doit etre de taille maximale 4</p>
+                <p style="color: red;" *ngIf="code_postale.errors.pattern">champ code postale doit contenir seulemenet des nombres</p>
+
+            </div>
+
 
             <ion-item>
                 <ion-label floating color="black"> Raison sociale</ion-label>
-                <ion-input [(ngModel)]="modelpart.raison_sociale" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input pattern="[a-zA-Z ]*" minlength="3" required #raison_sociale="ngModel" [(ngModel)]="modelpart.raison_sociale" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
             </ion-item>
+            <div *ngIf="f.submitted && raison_sociale.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="raison_sociale.errors.required">champ raison socile est vide</p>
+                <p style="color: red;" *ngIf="raison_sociale.errors.maxlength">champ rasion sociale doit contenir au moins 3 caractéres </p>
+                <p style="color: red;" *ngIf="raison_sociale.errors.pattern">champ raison sociale doit contenir seulemenet des caractéres</p>
+
+            </div>
 
             <ion-item>
                 <ion-label floating color="black"> Code TVA</ion-label>
                 <ion-input [(ngModel)]="modelpart.TVA" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
             </ion-item>
 
+
             <ion-item>
                 <ion-label floating color="black"> Ville</ion-label>
-                <ion-input [(ngModel)]="modelpart.Ville" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input pattern="[a-zA-Z ]*" minlength="3" required #ville="ngModel" [(ngModel)]="modelpart.Ville" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
             </ion-item>
+            <div *ngIf="f.submitted && ville.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="ville.errors.required">champ ville socile est vide</p>
+                <p style="color: red;" *ngIf="ville.errors.maxlength">champ ville sociale doit contenir au moins 3 caractéres </p>
+                <p style="color: red;" *ngIf="ville.errors.pattern">champ ville sociale doit contenir seulemenet des caractéres</p>
+
+            </div>
 
             <ion-item>
                 <ion-label color="black"> Nombre de place à réserver</ion-label>

@@ -1,17 +1,21 @@
 <ion-content padding class="background">
 
+
+
     <ion-grid>
         <ion-row>
-            <ion-col>
+            <ion-col style="padding: 10%;">
                 <img src="/assets/imgs/tda.png" />
             </ion-col>
         </ion-row>
+
         <form [formGroup]="loginGroup" (ngSubmit)="connect()">
             <ion-row>
                 <ion-col>
                     <ion-item class="item">
                         <ion-label floating color="light">
-                            Email
+                            <p style="color: #000000;"> Email
+                            </p>
                         </ion-label>
                         <ion-input type="text" formControlName="email" required></ion-input>
                     </ion-item>
@@ -21,11 +25,12 @@
                 <ion-col>
                     <ion-item class="item">
                         <ion-label floating color="light">
-                            Password
+                            <p style="color: #000000;">Mot de passe
+                            </p>
                         </ion-label>
                         <ion-input type="password" formControlName="password" required></ion-input>
                     </ion-item>
-                </ion-col> <button ion-button color="light" block large round type="submit" outline [disabled]="!loginGroup.valid">Se connecter </button>
+                </ion-col> <button ion-button style="background-color:dodgerblue; color:white;" block large round type="submit" outline [disabled]="!loginGroup.valid">Se connecter </button>
             </ion-row>
             <ion-row>
                 <ion-col>
@@ -38,6 +43,9 @@
                 <button ion-button color="light" block large round (click)="register()">S'inscrire </button>
             </ion-col>
         </ion-row>
+        <ion-col style="width: 40%; left: 60%; border-radius: 50% !important;        ">
+            <img src="/assets/imgs/iceberg.jpg" />
+        </ion-col>
         <ion-row>
             <ion-col>
                 <button ion-button color="light" block large round (click)="passer()">pass</button>
@@ -46,7 +54,10 @@
 
 
 
-    </ion-grid>
 
+
+
+
+    </ion-grid>
 
 </ion-content>

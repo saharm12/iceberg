@@ -46,6 +46,7 @@ import { EnquetePage } from '../pages/enquete/enquete';
 import { DocumentProvider } from '../providers/document/document';
 import { SponsorsPage } from '../pages/sponsors/sponsors';
 import{SponsorsProvider} from '../providers/sponsors/sponsors'
+import { DocumentPage} from '../pages/document/document'
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 @NgModule({
@@ -77,7 +78,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     MapPage,
     ChatPage,
     EnquetePage,
-    SponsorsPage
+    SponsorsPage,
+    DocumentPage
   
     
    
@@ -120,6 +122,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
    BjuryPage,
     ReglePage,
     MapPage,
+    DocumentPage
 
 
 

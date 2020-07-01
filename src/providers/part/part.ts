@@ -32,4 +32,13 @@ export class PartProvider {
       "num_cheque": num_cheque,
     });
   }
+
+  checkemailNotTaken(email_participant)
+  {
+    let token = localStorage.getItem('token'); 
+    return this.http.post(this.BASE_URL+'/checkemailNotTaken',{
+      'email_participant': email_participant,
+     
+    }); 
+  }
 }

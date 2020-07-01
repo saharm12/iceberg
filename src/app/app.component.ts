@@ -40,6 +40,7 @@ export class MyApp {
       { title: ' Remplir enquete de satisfaction', component: EnquetePage },
       { title: ' Déconnnexion', component: HomePage },
     ];
+    
   }
   openPage(page) { this.nav.setRoot(page.component);
 

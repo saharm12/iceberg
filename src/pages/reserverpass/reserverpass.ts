@@ -77,7 +77,17 @@ this.modelpart = new Participant();
   }
 
   Soumettre(){  
-  this.Part.Register(this.modelpart.nom, this.modelpart.prenom, this.modelpart.email, this.modelpart.adresse, this.modelpart.code_postale, this.modelpart.raison_sociale, this.modelpart.TVA, this.modelpart.Ville, this.modelpart.reserver, this.modelpart.programme ,this.modelpart.type_participant, this.modelpart.paiement, this.modelpart.num_cheque)
+
+    this.Part.checkemailNotTaken(this.modelpart.email).subscribe((res:any)=>{
+       console.log(res.emailNotTaken)
+      if(!res.emailNotTaken)
+      { 
+       this.showPopup("Erreur!!","Email deja existant veuillez saisir un autre.");
+        
+      }else{
+
+    
+      this.Part.Register(this.modelpart.nom, this.modelpart.prenom, this.modelpart.email, this.modelpart.adresse, this.modelpart.code_postale, this.modelpart.raison_sociale, this.modelpart.TVA, this.modelpart.Ville, this.modelpart.reserver, this.modelpart.programme ,this.modelpart.type_participant, this.modelpart.paiement, this.modelpart.num_cheque)
     .subscribe ( success => {
       if (success) {
         this.createSuccess = true;
@@ -90,9 +100,14 @@ this.modelpart = new Participant();
        error => {
          this.showPopup("Error", error);
        });
-            
+      }
+      })
+      
   
     }
+
+
+
       showPopup(title, text) {
         let alert = this.alertCtrl.create({
           title: title,

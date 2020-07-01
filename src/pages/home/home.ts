@@ -5,6 +5,7 @@ import { RegisterPage } from '../register/register';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RestProvider } from '../../providers/rest/rest';
 import { FirstPage } from '../first/first';
+import { ToastController, ToastOptions } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -13,8 +14,9 @@ import { FirstPage } from '../first/first';
 export class HomePage {
   mail:string; 
 psw:string ;
+toastOptions:ToastOptions;
   loginGroup:FormGroup
-  constructor(private Rest :RestProvider , public navCtrl: NavController, myformBuilder:FormBuilder , 
+  constructor(private toastCtrl: ToastController,private Rest :RestProvider , public navCtrl: NavController, myformBuilder:FormBuilder , 
     private loadingCtrl: LoadingController , private alertCtrl: AlertController,
     )
   
@@ -31,25 +33,50 @@ psw:string ;
      {let result:any =allowed ;
      console.log(result);
    if (result.user==true){
-    this.showWelcome("Bienvenue!!!");
+     console.log(result.user.role)
+     if(result.role==0){
+      this.presentToast();
+
+    //this.showWelcome("Bienvenue!!!");
     localStorage.setItem('id',result.id); 
     localStorage.setItem('token',result.token);  
      this.navCtrl.setRoot(MainPage);
    
-     
+    
     } else {
-   this.showError("Email ou mdp incorrecte");
+   this.showError();
      }
+    
+    }else{
+      this.showError();
+
+    }
    },
   //error =>  {console.log("erreur"); } );
   error => {
-    this.showError(error);
+    this.showError();
   });
  }
  
+ presentToast() {
+  
+  this.toastOptions = {
+    message: "Bienvenue",
+    position : "middle",
+    duration: 3000,
+    cssClass: "info",
+  
+    
+
+  }
+  this.toastCtrl.create(this.toastOptions).present();
+  }
+  
+  
+  
 
 
-showError(text){
+showError(){
   console.log("erreur");
   let alert =this .alertCtrl.create({
     title:'Erreur',
@@ -63,7 +90,7 @@ showError(text){
 
 }
 
-showWelcome(text){
+showWelcome(){
   console.log("Bienvenue");
   let alert =this .alertCtrl.create({
     title:'Bienvenue!',
@@ -73,11 +100,10 @@ showWelcome(text){
     handler:()=>{console.log('OK')
     } }]
  });
-  alert.present();
+
+
 
 }
-
-
 
 
 

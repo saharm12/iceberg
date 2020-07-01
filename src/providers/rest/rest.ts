@@ -33,17 +33,27 @@ export class RestProvider {
     let token = localStorage.getItem('token'); 
    return  this.http.get(this.BASE_URL+'/'+id,{headers:{'x-access-token':token}}) // appel de la requete de recupration des donnes utilisateurs 
   }
-
-  registerUser( name,firstname, email,password){
+  isAdmin:boolean=false;
+  registerUser( name,firstname, email,password,isAdmin){
     return this.http.post(this.BASE_URL+'/register',{
       'name':name,
       'firstname':firstname,
       'email':email,
       'password':password,
+      'isAdmin':isAdmin
 
 
 
     });
+  }
+
+  checkemailNotTaken(email)
+  {
+    let token = localStorage.getItem('token'); 
+    return this.http.post(this.BASE_URL+'/checkEmailNotTaken',{
+      'email': email,
+     
+    }); 
   }
 
 

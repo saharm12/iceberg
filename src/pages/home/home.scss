@@ -1,20 +1,34 @@
-page-home {
-    .background {
-        background-color: rgba(73, 155, 234, 1);
-        background: filter-gradient(#ffffff, #207ce5, horizontal);
-        background: background-image(linear-gradient(left, rgba(73, 155, 234, 1) 0%, rgba(32, 124, 229, 1) 100%));
-    }
-    .item {
-        background-color: rgba(0, 0, 0, 0);
-    }
-    ion-grid {
-        align-self: center;
-        //position: fixed;
-        //margin-right: 10%;
-        //margin-top: 40%;
-    }
-    ion-label {
-        $label-md-text-color-focused: #fff;
-        $label-ios-text-color-focused: #fff;
-    }
-}
+        page-home {
+            .background {
+                // background-color: rgba(73, 155, 234, 1);
+                //background: filter-gradient(#ffffff, #207ce5, horizontal);
+                background: linear-gradient(0.25turn, #52b9de, #ebf8e1, #52b9de);
+                background: background-image(linear-gradient(left, rgba(73, 155, 234, 1) 0%, rgba(32, 124, 229, 1) 100%));
+                //background-image: url('../../assets/imgs/logintrue.jpg');
+                //background-image: url('../../assets/imgs/logintruee.jpg');
+                background-image: url('../../assets/imgs/home.jpg');
+                //background-image: url('../../assets/imgs/home2.jpg');
+                //background-image: url('../../assets/imgs/home4.jpg');
+                //background-image: url('../../assets/imgs/home5.jpg');
+                //background-image: url('../../assets/imgs/54b61a7bf50d8fe43925a60f2a23bc7d.jpg');
+            }
+            .item {
+                background-color: #00000000;
+            }
+            ion-grid {
+                align-self: center;
+                //position: fixed;
+                // margin-right: 10%;
+                // margin-top: 40%;
+            }
+            ion-label {
+                $label-md-text-color-focused: #fff;
+                $label-ios-text-color-focused: #fff;
+            }
+            ion-input {
+                border-color: black;
+                border: 0px solid #000000;
+                box-sizing: border-box;
+                //background-color: grey;
+            }
+        }
