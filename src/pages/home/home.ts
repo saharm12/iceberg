@@ -12,6 +12,8 @@ import { ToastController, ToastOptions } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  tabBarElement: any;
+  splash = true;
   mail:string; 
 psw:string ;
 toastOptions:ToastOptions;
@@ -19,13 +21,17 @@ toastOptions:ToastOptions;
   constructor(private toastCtrl: ToastController,private Rest :RestProvider , public navCtrl: NavController, myformBuilder:FormBuilder , 
     private loadingCtrl: LoadingController , private alertCtrl: AlertController,
     )
-  
+   
   {
     this.loginGroup = myformBuilder.group({
       email: ['', Validators.compose([Validators.maxLength(70), Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'), Validators.required])],
       password:['',Validators.required]
     })
-
+    this.tabBarElement = document.querySelector('.tabbar');
+  }
+  ionViewDidLoad() {
+    
+    setTimeout(() => this.splash = false, 7000);
   }
   
   connect()
@@ -62,7 +68,7 @@ toastOptions:ToastOptions;
   
   this.toastOptions = {
     message: "Bienvenue",
-    position : "middle",
+    position : "top",
     duration: 3000,
     cssClass: "info",
   
@@ -112,7 +118,7 @@ showWelcome(){
 
   }
   passer(){
-    this.navCtrl.push(FirstPage);
+    this.navCtrl.setRoot(FirstPage);
   }
 
 

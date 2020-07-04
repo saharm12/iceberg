@@ -9,6 +9,8 @@ import { EnquetePage } from '../enquete/enquete';
 //import { SponsorsPage} from '../Sponsors/sponsors';
 import { LaureatPage } from '../laureat/laureat';
 import { DocumentPage } from '../document/document';
+import { AproposPage } from '../apropos/apropos';
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the MainPage page.
  *
@@ -23,13 +25,17 @@ import { DocumentPage } from '../document/document';
   
 })
 export class MainPage {
-
+  rootPage = TabsPage;
+  tab2Root = AproposPage;
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl:AlertController ) {
+   
   }
+ 
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MainPage');
+    
   }
+
   inscription()
   {
       //this.navCtrl.push(MainPage) 

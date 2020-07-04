@@ -49,6 +49,7 @@ export class ExposantPage {
   }
 
 Soumettre(){
+
   
   this.Expo.Registerexpo(this.expoModel.name, this.expoModel.firstname, this.expoModel.Email,this.expoModel.telephone,this.expoModel.raison,this.expoModel.adresse,this.expoModel.postale, this.expoModel.ville,this.expoModel.Pays, this.expoModel.mobile,this.expoModel.TVA, this.expoModel.paiement, this.expoModel.cheque)
   .subscribe ( success => {
@@ -63,6 +64,7 @@ Soumettre(){
      error => {
        this.showError(error);
      });
+     
     }
 
     showError(text){

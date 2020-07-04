@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-    <ion-navbar>
+    <ion-navbar color="primary">
         <button ion-button menuToggle icon-only>
             <ion-icon name='menu'></ion-icon>
           </button>
@@ -44,7 +44,14 @@
 
         </ion-list>
         <ion-list *ngSwitchCase="'programme'">
-            <ion-item *ngFor="let prog of programme">
+            <ion-item *ngFor="let prog of programmes">
+                <span>     
+   
+                    <div style="color:rgb(0, 0, 0)" [innerHTML]="prog.details_programme | html"></div>    
+     
+                    </span>
+
+
 
 
             </ion-item>
@@ -57,7 +64,10 @@
                 <ion-thumbnail item-start>
                     <img *ngIf="speak.image!=null" src="{{base_url}}{{speak.image}}">
                 </ion-thumbnail>
-                <h2>{{speak.nom_speakers}} {{speak.prennom_speakers}} </h2>
+                <h2>{{speak.nom_speakers}} {{speak.prenom_speakers}}
+                </h2>
+
+
 
                 <h4>{{speak.pays}}
                 </h4>
@@ -75,4 +85,36 @@
 
 
     </div>
+    <ion-footer>
+        <ion-toolbar>
+
+            <ion-segment>
+                <ion-segment-button value="new">
+
+                    <ion-icon ios="ios-arrow-back-outline" md="md-arrow-back"></ion-icon>
+
+
+                </ion-segment-button>
+                <ion-segment-button value="new">
+
+                    <ion-icon color="primary" ios="ios-home" md="md-home"></ion-icon>
+
+                    Accueil
+
+
+
+
+                </ion-segment-button>
+
+
+                <ion-segment-button value="hot" (click)="Main()">
+                    <ion-icon color="primary" ios="ios-aperture" md="md-aperture"></ion-icon>
+
+                    Apropos
+                </ion-segment-button>
+            </ion-segment>
+
+
+        </ion-toolbar>
+    </ion-footer>
 </ion-content>

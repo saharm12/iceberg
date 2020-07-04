@@ -4,6 +4,7 @@ import { SpeakerProvider} from '../../providers/speaker/speaker';
 import { DocumentProvider} from '../../providers/document/document';
 import { ParticipantPage } from '../participant/participant';
 import {ReserverpassPage} from '../reserverpass/reserverpass';
+import { ProgrammeProvider} from'../../providers/programme/programme'
 /**
  * Generated class for the MeetingPage page.
  *
@@ -22,7 +23,7 @@ export class MeetingPage {
 documents=[];
   base_url="http://localhost:3000"
 
-  constructor(private docProv:DocumentProvider,private speakProv: SpeakerProvider,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private prog : ProgrammeProvider, private docProv:DocumentProvider,private speakProv: SpeakerProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -30,6 +31,7 @@ documents=[];
   }
   ngOnInit() {
     this.getSpeak();
+    this.getProgramme();
   
   }
 
@@ -56,6 +58,24 @@ getDocument(){
      
 
       this.documents = result.document; 
+      
+
+    })
+ }
+
+
+ }
+
+ getProgramme(){
+  {   
+    this.prog.getprogamme().subscribe(data=>{
+    
+
+      let result:any = data; 
+      console.log(result.programmes); 
+     
+
+      this.programmes = result.programme; 
       
 
     })

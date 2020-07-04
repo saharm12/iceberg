@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule, Popover } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -47,6 +46,12 @@ import { DocumentProvider } from '../providers/document/document';
 import { SponsorsPage } from '../pages/sponsors/sponsors';
 import{SponsorsProvider} from '../providers/sponsors/sponsors'
 import { DocumentPage} from '../pages/document/document'
+import { TabsPage } from '../pages/tabs/tabs';
+import { AproposPage } from '../pages/apropos/apropos';
+import { StatusBar } from '@ionic-native/status-bar';
+import { ProgrammeProvider } from '../providers/programme/programme';
+import { HtmlPipe } from '../pages/meeting/html.pipe';
+
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 @NgModule({
@@ -79,7 +84,10 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     ChatPage,
     EnquetePage,
     SponsorsPage,
-    DocumentPage
+    DocumentPage,
+    TabsPage,
+    AproposPage,
+    HtmlPipe
   
     
    
@@ -122,8 +130,9 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
    BjuryPage,
     ReglePage,
     MapPage,
-    DocumentPage
-
+    DocumentPage,
+    TabsPage,
+    AproposPage,
 
 
   ],
@@ -143,7 +152,10 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     JuryProvider,
     SpeakerProvider,
     DocumentProvider,
-    SponsorsProvider 
+    SponsorsProvider ,
+    StatusBar,
+    ProgrammeProvider,
+    
   
   ]
 })

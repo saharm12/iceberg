@@ -43,10 +43,12 @@ export class CategoriePage {
 });
   }
   eshop(event:any){
-    let popover = this.popoverCtrl.create(EshopPage,{}, {cssClass: 'contact-popover'});
+    let popover = this.popoverCtrl.create(EshopPage,{}, {cssClass: 'contact-popover'} , );
+    
   popover.present({
     ev: event
 });
+
   }
   digital(event:any){
     let popover = this.popoverCtrl.create(DigitalPage,{}, {cssClass: 'contact-popover'});

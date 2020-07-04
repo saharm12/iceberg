@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DocumentProvider} from '../../providers/document/document';
+import { MainPage } from '../main/main';
+import { MapPage } from '../map/map';
 
 /**
  * Generated class for the DocumentPage page.
@@ -17,8 +19,11 @@ import { DocumentProvider} from '../../providers/document/document';
 export class DocumentPage {
   documents=[];
   base_url="http://localhost:3000"
-
+ 
+  tab1 = MainPage;
+  tab2 = MainPage;
   constructor(private docProv:DocumentProvider, public navCtrl: NavController, public navParams: NavParams) {
+    
   }
 
   ionViewDidLoad() {
@@ -29,7 +34,9 @@ export class DocumentPage {
   
   }
 
-
+Main(){
+  this.navCtrl.push(MainPage);
+}
   getDocument(){
     {   
       this.docProv.getDocument().subscribe(data=>{

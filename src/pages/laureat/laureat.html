@@ -13,8 +13,18 @@
 <ion-content padding class="laureat">
 
     <ion-item *ngFor="let lau of lauts">
+        <ion-row>
+
+            <ion-card text-center>
+                <ion-card-header>
+                    <h2 class="titleStyle">{{lau.categorie}}</h2>
+                </ion-card-header>
+            </ion-card>
+
+
+
+        </ion-row>
         <div>
-            <h2 class="titleStyle">{{lau.categorie}}</h2>
             <img *ngIf="lau.image!=null" src="{{base_url}}{{lau.image}}">
         </div>
 

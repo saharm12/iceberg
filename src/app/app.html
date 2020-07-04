@@ -41,6 +41,7 @@
         </ion-list>
     </ion-content>
 </ion-menu>-->
+
 <ion-menu [content]="content" [persistent]="true">
     <ion-header>
         <ion-toolbar>
@@ -58,8 +59,13 @@
 
         <ion-list>
             <button menuClose ion-item *ngFor="let p of pages" (tap)="openPage(p)">
-        {{p.title}}
+              {{p.title}}
+              <ion-icon color="primary" item-left [name]="p.icon"></ion-icon> 
+
+        
       </button>
+
+
         </ion-list>
     </ion-content>
 
