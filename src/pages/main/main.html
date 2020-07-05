@@ -86,7 +86,7 @@
 
 <ion-header>
 
-    <ion-navbar>
+    <ion-navbar color="primary">
         <ion-title text-center>
             Menu
         </ion-title>
@@ -96,70 +96,177 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="content">
 
 
 
     <ion-grid>
-        <ion-row col-12 style="padding:8%">
+        <ion-row>
 
             <div>
 
-                <img style="
-                width: 40%;
-                align-items: center; " src="../../assets/imgs/tda.png" />
+                <img class="imag" src="../../assets/imgs/tda.png" />
 
             </div>
 
         </ion-row>
         <ion-row>
             <ion-col col-6>
-                <ion-card text-center padding color="primary" (click)="Meeting()" style="height: 80px;">
-                    <ion-icon name="person"></ion-icon>
-                    <h2>TDA Meeting</h2>
-                </ion-card>
+                <button (click)="Meeting()" class="btn">
+                <img class="img" src="../../assets/imgs/iconmeeting.png">
+            </button>
+
+
+                <h2 class="text">TDA Meeting</h2>
+
+
             </ion-col>
             <ion-col col-6>
-                <ion-card text-center padding color="primary" (click)="concours()" style="height: 80px;">
+                <button (click)="concours()" class="btn">
+                <img class="img" src="../../assets/imgs/meetingg.png">
+            </button>
+
+
+                <h2 class="text">TDA Concours</h2>
+
+
+            </ion-col>
+            <!--  <ion-col col-6>
+                <ion-card text-center class="card" padding class="back" (click)="concours()" style="height: 80px;">
                     <ion-icon name="people"></ion-icon>
                     <h2>TDA Concours</h2>
                 </ion-card>
-            </ion-col>
+            </ion-col>-->
         </ion-row>
         <ion-row>
-            <ion-col col-6>
-                <ion-card text-center padding color="primary" (click)="Chat()" style="height: 80px;">
+            <!--  <ion-col col-6>
+                <ion-card text-center padding class="back" (click)="Chat()" style="height: 80px;">
                     <ion-icon name="calendar"></ion-icon>
                     <h2>Chatter</h2>
                 </ion-card>
-            </ion-col>
+            </ion-col>-->
             <ion-col col-6>
-                <ion-card text-center padding color="primary" (click)="Enquete()" style="height: 80px;">
+                <button (click)="Chat()" class="btn">
+                    <img class="img" src="../../assets/imgs/chat.png">
+                </button>
+
+
+                <h2 class="text">Chatter</h2>
+
+
+            </ion-col>
+
+
+            <!-- <ion-col col-6>
+                <ion-card text-center padding class="back" (click)="Enquete()" style="height: 80px;">
                     <ion-icon name="list"></ion-icon>
                     <h2>Enquête de satisfaction</h2>
                 </ion-card>
+            </ion-col>-->
+            <ion-col col-6>
+                <button (click)="Enquete()" class="btn">
+                <img class="img" src="../../assets/imgs/sati.png">
+            </button>
+
+
+                <h2 class="text">Enquête de satisfaction</h2>
+
+
             </ion-col>
         </ion-row>
         <ion-row>
-            <ion-col col-6>
-                <ion-card text-center padding color="primary" (click)="afficher()" style="height: 80px;">
+            <!-- <ion-col col-6>
+                <ion-card text-center padding class="back" (click)="afficher()" style="height: 80px;">
                     <ion-icon name="add"></ion-icon>
                     <h2>Lauréats</h2>
                 </ion-card>
+            </ion-col>-->
+            <ion-col col-6>
+                <button (click)="afficher()" class="btn">
+                <img class="img" src="../../assets/imgs/lau.png">
+            </button>
+
+
+                <h2 class="text">Lauréats</h2>
+
+
             </ion-col>
             <ion-col col-6>
-                <ion-card text-center padding color="primary" (click)="viiew()" style="height: 80px;">
+                <button (click)="viiew()" class="btn">
+                <img class="img" src="../../assets/imgs/map.png">
+            </button>
+
+
+                <h2 class="text">Google Maps</h2>
+
+
+            </ion-col>
+            <!--<ion-col col-6>
+                <ion-card text-center padding class="back" (click)="viiew()" style="height: 80px;">
                     <ion-icon name="calendar"></ion-icon>
                     <h2>Google Maps</h2>
                 </ion-card>
-            </ion-col>
-            <ion-col col-6>
-                <ion-card text-center padding color="primary" (click)="document()" style="height: 80px;">
+            </ion-col>-->
+            <!--<ion-col col-6>
+                <ion-card text-center padding class="back" (click)="document()" style="height: 80px;">
                     <ion-icon name="calendar"></ion-icon>
                     <h2>Document</h2>
-                </ion-card>
+                </ion-card>-->
+            <ion-col col-6>
+                <button (click)="document()" class="btn">
+                    <img class="img" src="../../assets/imgs/docc.png">
+                </button>
+
+
+                <h2 class="text">Document</h2>
+
+
+            </ion-col>
+            <ion-col col-6>
+                <button (click)="document()" class="btn">
+                    <img class="img" src="../../assets/imgs/aboutt.png">
+                </button>
+
+
+                <h2 class="text">Apropos</h2>
+
+
             </ion-col>
 
+
+
+            <!-- <ion-col col-6>
+                <ion-card text-center padding class="back" (click)="document()" style="height: 80px;">
+                    <ion-icon name="calendar"></ion-icon>
+                    <h2>Apropos</h2>
+                </ion-card>
+            </ion-col>-->
+
         </ion-row>
+        <ion-item><label>organisé par  : </label>
+            <img class="ms" src="/assets/imgs/iceberg.jpg" />
+
+            <img class="social" src="../../assets/imgs/iconfinder_1_5310113.png">
+            <img class="social" src="../../assets/imgs/instagram-icone-nouveau_1057-2227.jpg">
+            <img class="social" src="../../assets/imgs/linkedin-8nRts9.png">
+
+
+
+        </ion-item>
+
+
+
+
     </ion-grid>
+
+
+
+
+
+
+
+
+
+
+
 </ion-content>

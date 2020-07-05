@@ -1,1 +1,46 @@
-page-main {}
+page-main {
+    .back {
+        //background-image: linear-gradient(to right top, #edf5f6, #dceff2, #cbe8f0, #bae2ee, #a9dbed, #a9dbed, #a9dbed, #a9dbed, #bae2ee, #cbe8f0, #dceff2, #edf5f6);
+        // background-color: inherit;
+        // border: 0px;
+        background-image: linear-gradient(to right top, #ffffff, #eaedfb, #ccdef6, #a5d2ef, #76c6e2, #5dc3dc, #3fc1d5, #0dbecb, #08c4ce, #06cad1, #08d0d4, #0ed6d6);
+    }
+    .card {
+        border-radius: 10px;
+    }
+    .imag {
+        width: 40%;
+        align-items: center;
+        padding: 1%;
+        display: block;
+        margin: 0 auto;
+    }
+    .img {
+        width: 50%;
+        align-items: center;
+        display: block;
+        height: 30%;
+        margin: 0 auto;
+    }
+    .text {
+        // width: 7%;
+        font-size: 15px;
+        text-align: center;
+        display: block;
+        //height: 30%;
+        margin: 0 auto;
+    }
+    .btn {
+        background-color: white;
+    }
+    .ms {
+        width: 20%;
+        float: center;
+    }
+    .social {
+        width: 8%;
+        float: right;
+        margin-left: 2%;
+        ;
+    }
+}

@@ -7,7 +7,7 @@
 
 <ion-header>
 
-    <ion-navbar>
+    <ion-navbar color="primary">
         <button ion-button menuToggle icon-only>
             <ion-icon name='menu'></ion-icon>
           </button>
@@ -19,10 +19,12 @@
 
 <ion-content padding class="concours">
 
+
     <ion-list>
 
-        <button ion-item>
-            <ion-icon name="md-clipboard" item-start (click)="regle()"></ion-icon>
+        <button ion-item (click)="regle()">
+            <ion-icon name="md-clipboard" item-start ></ion-icon>
+          
             Réglement
           </button>
 
@@ -36,7 +38,7 @@
            Jury
           </button>
         <button ion-item (click)="candidat()">
-            <ion-icon name="ios-briefcaseios-briefcase" item-start></ion-icon>
+            <ion-icon name="ios-people" item-start></ion-icon>
            Candidat
           </button>
         <button ion-item (click)="exposant()">
@@ -91,5 +93,37 @@
             <button ion-button clear item-end (click)="viiew()">Voir</button>
         </ion-item>-->
     </ion-list>
+    <ion-footer>
+        <ion-toolbar>
+
+            <ion-segment>
+                <ion-segment-button value="new">
+
+                    <ion-icon ios="ios-arrow-back-outline" md="md-arrow-back"></ion-icon>
+
+
+                </ion-segment-button>
+                <ion-segment-button value="new">
+
+                    <ion-icon color="primary" ios="ios-home" md="md-home"></ion-icon>
+
+                    Accueil
+
+
+
+
+                </ion-segment-button>
+
+
+                <ion-segment-button value="hot" (click)="Main()">
+                    <ion-icon color="primary" ios="ios-aperture" md="md-aperture"></ion-icon>
+
+                    Apropos
+                </ion-segment-button>
+            </ion-segment>
+
+
+        </ion-toolbar>
+    </ion-footer>
 
 </ion-content>

@@ -5,30 +5,64 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar>
-        <ion-title>lauréats des éditions précédente </ion-title>
+    <ion-navbar color="primary">
+        <ion-title>lauréats </ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding class="laureat">
 
     <ion-item *ngFor="let lau of lauts">
-        <ion-row>
 
-            <ion-card text-center>
-                <ion-card-header>
-                    <h2 class="titleStyle">{{lau.categorie}}</h2>
-                </ion-card-header>
-            </ion-card>
-
-
-
-        </ion-row>
         <div>
+            <!-- active -->
+
+            <h2 class="titleStyle">
+                <ion-icon style="color: yellow;" name="star"></ion-icon>
+                {{lau.categorie}} </h2>
+
+
+
             <img *ngIf="lau.image!=null" src="{{base_url}}{{lau.image}}">
+
+
         </div>
 
     </ion-item>
 
 
+
+
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+
+        <ion-segment>
+            <ion-segment-button value="new">
+
+                <ion-icon ios="ios-arrow-back-outline" md="md-arrow-back"></ion-icon>
+
+
+            </ion-segment-button>
+            <ion-segment-button value="new">
+
+                <ion-icon color="primary" ios="ios-home" md="md-home"></ion-icon>
+
+                Accueil
+
+
+
+
+            </ion-segment-button>
+
+
+            <ion-segment-button value="hot" (click)="Main()">
+                <ion-icon color="primary" ios="ios-aperture" md="md-aperture"></ion-icon>
+
+                Apropos
+            </ion-segment-button>
+        </ion-segment>
+
+
+    </ion-toolbar>
+</ion-footer>
