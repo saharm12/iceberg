@@ -75,8 +75,11 @@ this.modelpart = new Participant();
     
 
   }
-
+  ngOnInit() {
+   this.getCount();
+  }
   Soumettre(){  
+  
 
     this.Part.checkemailNotTaken(this.modelpart.email).subscribe((res:any)=>{
        console.log(res.emailNotTaken)
@@ -106,7 +109,27 @@ this.modelpart = new Participant();
   
     }
 
-
+    getCount(){
+      {   
+        this.Part.getcountpart().subscribe((res:any)=>{
+        
+          console.log("res", res);
+         // let result:any = res; 
+          console.log("res", res.participant);
+         if(res.particpant >= 55){
+            
+            this.showPopup("Erreur", "inscription a été expiré.");
+    
+          } 
+         
+    
+    
+          
+    
+        })
+     }
+    
+    }
 
       showPopup(title, text) {
         let alert = this.alertCtrl.create({
@@ -134,5 +157,7 @@ this.modelpart = new Participant();
       telecharger(){
         this.nav.push(MeetingPage);
       } 
+
+     
 
 }

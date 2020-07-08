@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,AlertController} from 'ionic-angular';
 import { SpeakerProvider} from '../../providers/speaker/speaker';
 import { DocumentProvider} from '../../providers/document/document';
 import { ParticipantPage } from '../participant/participant';
 import {ReserverpassPage} from '../reserverpass/reserverpass';
 import { ProgrammeProvider} from'../../providers/programme/programme'
+import {PartProvider } from '../../providers/part/part';
 /**
  * Generated class for the MeetingPage page.
  *
@@ -21,9 +22,11 @@ export class MeetingPage {
   speake= []; 
   programmes=[];  
 documents=[];
+createSuccess = false;
+
   base_url="http://localhost:3000"
 
-  constructor(private prog : ProgrammeProvider, private docProv:DocumentProvider,private speakProv: SpeakerProvider,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public nav: NavController,private alertCtrl: AlertController,private Part : PartProvider ,private prog : ProgrammeProvider, private docProv:DocumentProvider,private speakProv: SpeakerProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -83,5 +86,24 @@ getDocument(){
 
 
  }
+
+
+showPopup(title, text) {
+  let alert = this.alertCtrl.create({
+    title: title,
+    subTitle: text,
+    buttons: [
+      {
+        text: 'OK',
+        handler: data => {
+          if (this.createSuccess) {
+            this.nav.popToRoot();
+          }
+        }
+      }
+    ]
+  });
+  alert.present();
+}
 
 }

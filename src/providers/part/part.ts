@@ -41,4 +41,12 @@ export class PartProvider {
      
     }); 
   }
+
+
+  getcountpart(){
+    let token = localStorage.getItem('token');
+    return this.http.get(this.BASE_URL+'/getcountpart',{headers: {   
+      'x-access-token':token 
+     }}); 
+  }
 }
