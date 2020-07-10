@@ -28,104 +28,17 @@
     <ion-label>
         <h1> Nos partenaires</h1>
     </ion-label>
+
     <ion-slides pager="true">
 
-        <ion-slide>
+        <ion-slide *ngFor="let parte of partenair">
 
 
-            <img src="assets/imgs/part1.png">
-
-        </ion-slide>
-        <ion-slide>
-
-
-            <img src="assets/imgs/part2.png">
+            <img *ngIf="parte.image!=null" src="{{base_url}}{{parte.image}}">
 
         </ion-slide>
-        <ion-slide>
 
-
-            <img src="assets/imgs/part3.png">
-
-        </ion-slide>
-        <ion-slide>
-
-
-            <img src="assets/imgs/part4.png">
-
-        </ion-slide>
-        <ion-slide>
-
-
-            <img src="assets/imgs/part5.png">
-
-        </ion-slide>
-        <ion-slide>
-
-
-            <img src="assets/imgs/part6.png">
-
-        </ion-slide>
-        <ion-slide>
-
-
-            <img src="assets/imgs/part7.png">
-
-        </ion-slide>
-        <ion-slide>
-
-
-            <img src="assets/imgs/part8.png">
-
-        </ion-slide>
-        <ion-slide>
-
-
-            <img src="assets/imgs/part9.png">
-
-        </ion-slide>
-        <ion-slide>
-
-
-            <img src="assets/imgs/part10.png">
-
-        </ion-slide>
-        <ion-slide>
-
-
-            <img src="assets/imgs/part11.png">
-
-        </ion-slide>
-        <ion-slide>
-
-
-            <img src="assets/imgs/part12.png">
-
-        </ion-slide>
-        <ion-slide>
-
-
-            <img src="assets/imgs/part13.png">
-
-        </ion-slide>
-        <ion-slide>
-
-
-            <img src="assets/imgs/part14.png">
-
-        </ion-slide>
-        <ion-slide>
-
-
-            <img src="assets/imgs/part15.png">
-
-        </ion-slide>
-        <ion-slide>
-
-
-            <img src="assets/imgs/part16.png">
-
-        </ion-slide>
     </ion-slides>
+
 
 </ion-content>

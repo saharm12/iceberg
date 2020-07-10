@@ -23,6 +23,13 @@ toastOptions:ToastOptions;
     )
    
   {
+
+    console.log("token", localStorage.getItem("token"));
+ if(localStorage.getItem("token")!= null){
+
+  this.navCtrl.setRoot(MainPage);
+
+ }    
     this.loginGroup = myformBuilder.group({
       email: ['', Validators.compose([Validators.maxLength(70), Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'), Validators.required])],
       password:['',Validators.required]

@@ -51,6 +51,7 @@ import { AproposPage } from '../pages/apropos/apropos';
 import { StatusBar } from '@ionic-native/status-bar';
 import { ProgrammeProvider } from '../providers/programme/programme';
 import { HtmlPipe } from '../pages/meeting/html.pipe';
+import { PartenaireProvider } from '../providers/partenaire/partenaire';
 
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
@@ -155,6 +156,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     SponsorsProvider ,
     StatusBar,
     ProgrammeProvider,
+    PartenaireProvider,
     
   
   ]

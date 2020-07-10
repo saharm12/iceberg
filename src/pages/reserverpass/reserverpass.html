@@ -137,8 +137,14 @@
             </div>
             <ion-row>
 
+
                 <ion-col>
-                    <button ion-button color="primary" block large round>Soumettre </button>
+
+                    <div *ngIf="count <= 10">
+                        <button ion-button color="primary" block large round>Soumettre </button>
+
+
+                    </div>
 
                 </ion-col>
             </ion-row>

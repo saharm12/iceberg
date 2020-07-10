@@ -20,7 +20,7 @@ export class ReserverpassPage {
  createSuccess = false;
  paiementCheque : boolean = false;
  type_part=[];
-
+count ;
   modelpart: Participant;
 
   programme=[]
@@ -63,7 +63,7 @@ export class ReserverpassPage {
     ]
   
 this.modelpart = new Participant();
-      
+      this.getCount();
   }
 
     
@@ -112,11 +112,11 @@ this.modelpart = new Participant();
     getCount(){
       {   
         this.Part.getcountpart().subscribe((res:any)=>{
-        
+        this.count = res.participant;
           console.log("res", res);
          // let result:any = res; 
           console.log("res", res.participant);
-         if(res.particpant >= 55){
+         if(res.particpant >= 13){
             
             this.showPopup("Erreur", "inscription a été expiré.");
     

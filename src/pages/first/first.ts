@@ -17,7 +17,15 @@ import { HomePage } from '../home/home';
 export class FirstPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toastctrl:ToastController) {
+    console.log("token", localStorage.getItem("token"));
+    if(localStorage.getItem("token")!= null){
+   
+     this.navCtrl.setRoot(HomePage);
+   
+    }    
+  
   }
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FirstPage');

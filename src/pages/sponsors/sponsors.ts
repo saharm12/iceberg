@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {SponsorsProvider} from '../../providers/sponsors/sponsors'
+import { PartenaireProvider} from '../../providers/partenaire/partenaire'
 /**
  * Generated class for the SponsorsPage page.
  *
@@ -15,8 +16,10 @@ import {SponsorsProvider} from '../../providers/sponsors/sponsors'
 })
 export class SponsorsPage {
   sponsors=[];
+  partenair=[];
+
   base_url="http://localhost:3000"
-  constructor(public navCtrl: NavController, public navParams: NavParams, private sponProv : SponsorsProvider) {
+  constructor(private partProvider : PartenaireProvider , public navCtrl: NavController, public navParams: NavParams, private sponProv : SponsorsProvider) {
   }
 
   ionViewDidLoad() {
@@ -27,6 +30,7 @@ export class SponsorsPage {
     
 
     this.getsponsors();
+    this.getpartenaire();
   }
 
   getsponsors()
@@ -40,6 +44,24 @@ export class SponsorsPage {
        
 
         this.sponsors = result.sponsors; 
+        
+
+      })
+    
+  }
+
+  getpartenaire()
+  { 
+      
+      this.partProvider.getpartenaire().subscribe
+      (data=>{
+      
+
+        let result:any = data; 
+        console.log(result.partenaires); 
+       
+
+        this.partenair = result.partenaires; 
         
 
       })

@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import {  FileUploader  } from 'ng2-file-upload';
 import { CandidatProvider } from '../../providers/candidat/candidat';
@@ -21,9 +21,11 @@ import { MeetingPage } from '../meeting/meeting';
 })
 export class CandidatPage {
   categories=[];
+  createSuccess = false;
+
   uploadedFile:File ;
   secondFile :File ; 
-
+  ischecked : boolean = false;
   public uploader:FileUploader ;
   canditModel : Candidat;
  fileURL="";
@@ -38,7 +40,7 @@ client="";
 categorie="";
 
 
-  constructor(private CanditProv: CandidatProvider ,public navCtrl: NavController, public navParams: NavParams,private http:HttpClient) {
+  constructor(private alertCtrl: AlertController,private CanditProv: CandidatProvider ,public navCtrl: NavController, public navParams: NavParams,private http:HttpClient) {
 
     this.canditModel= new Candidat();
   
@@ -123,7 +125,9 @@ data.append('categorie',this.categorie);
 data.append('firstfile',this.uploadedFile);
 data.append('secondfile',this.secondFile); 
  
- 
+if (this.ischecked = false){
+this.showPopup("Erreur","Erreur");
+}else{
 
   this.http.post('http://localhost:3000/candidat/addfiles',data ).subscribe(data=>{
   let result:any =data; 
@@ -135,7 +139,7 @@ data.append('secondfile',this.secondFile);
     //{ 
    
      //console.log("ok")
-     
+    } 
       
       
    // }
@@ -150,5 +154,21 @@ telecharger(){
   this.navCtrl.push(MeetingPage);
 }
 
-  
+showPopup(title, text) {
+  let alert = this.alertCtrl.create({
+    title: title,
+    subTitle: text,
+    buttons: [
+      {
+        text: 'OK',
+        handler: data => {
+          if (this.createSuccess) {
+            this.navCtrl.popToRoot();
+          }
+        }
+      }
+    ]
+  });
+  alert.present();
+}
 }
