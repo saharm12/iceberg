@@ -6,7 +6,10 @@
 -->
 <ion-header>
     <ion-navbar color="primary">
-        <ion-title>Document</ion-title>
+        <button ion-button menuToggle icon-only>
+            <ion-icon name='menu'></ion-icon>
+          </button>
+        <ion-title>Documents</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -33,36 +36,37 @@
             <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
         </ion-fab-list>
     </ion-fab>-->
-    <ion-footer>
-        <ion-toolbar>
 
-            <ion-segment>
-                <ion-segment-button value="new">
-
-                    <ion-icon ios="ios-arrow-back-outline" md="md-arrow-back"></ion-icon>
-
-
-                </ion-segment-button>
-                <ion-segment-button value="new">
-
-                    <ion-icon color="primary" ios="ios-home" md="md-home"></ion-icon>
-
-                    Accueil
-
-
-
-
-                </ion-segment-button>
-
-
-                <ion-segment-button value="hot" (click)="Main()">
-                    <ion-icon color="primary" ios="ios-aperture" md="md-aperture"></ion-icon>
-
-                    Apropos
-                </ion-segment-button>
-            </ion-segment>
-
-
-        </ion-toolbar>
-    </ion-footer>
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+
+        <ion-segment>
+            <ion-segment-button value="new" (click)="return()">
+
+                <ion-icon ios="ios-arrow-back-outline" md="md-arrow-back"></ion-icon>
+
+
+            </ion-segment-button>
+            <ion-segment-button value="new" (click)="main()">
+
+                <ion-icon color="primary" ios="ios-home" md="md-home"></ion-icon>
+
+                Accueil
+
+
+
+
+            </ion-segment-button>
+
+
+            <ion-segment-button value="hot" (click)="apropos()">
+                <ion-icon color="primary" ios="ios-aperture" md="md-aperture"></ion-icon>
+
+                A propos
+            </ion-segment-button>
+        </ion-segment>
+
+
+    </ion-toolbar>
+</ion-footer>

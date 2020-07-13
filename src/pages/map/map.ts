@@ -3,6 +3,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GESTURE_PRIORITY_TOGGLE } from 'ionic-angular/umd/gestures/gesture-controller';
 import * as mapboxgl from 'mapbox-gl';
 import { Geolocation } from '@ionic-native/geolocation';
+import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+//import {MapboxDirections} from '@mapbox/mapbox-gl-directions';
+import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
+
 /**
  * Generated class for the MapPage page.
  *
@@ -20,7 +24,8 @@ export class MapPage {
   map :any;
   lat = 37.75;
   lng = -122.41;
-  style = 'mapbox://styles/mapbox/outdoors-v9';
+  style = 'mapbox://styles/mapbox/streets-v11';
+  
   //style = 'mapbox://styles/mapbox/streets-v11';
 
   //start = 'chicago, il';
@@ -41,11 +46,19 @@ export class MapPage {
         style: this.style,
         zoom: 13,
         center: [pos.coords.longitude, pos.coords.latitude]
+        
    
      // console.log('ionViewDidLoad MapPage');
     })
+   this.map.addControl(
+      new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+      })
+      );
     
     });
+  
     
    
   

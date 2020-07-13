@@ -28,4 +28,20 @@ PostCandit( fileURL )
 
     }); 
   }
+  checkemailNotTaken(email)
+  {
+    let token = localStorage.getItem('token'); 
+    return this.http.post(this.BASE_URL+'/checkemailNotTaken',{
+      'email': email,
+     
+    }); 
+  }
+  checkGSMNotTaken(GSM)
+  {
+    let token = localStorage.getItem('token'); 
+    return this.http.post(this.BASE_URL+'/CheckGSMNotTaken',{
+      'GSM': GSM,
+     
+    }); 
+  }
 }

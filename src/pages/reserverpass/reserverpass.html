@@ -64,12 +64,13 @@
 
             <ion-item>
                 <ion-label floating color="black"> Code Postal*</ion-label>
-                <ion-input pattern="[^-?[0-9]\\d*(\\.\\d{1,2})?$]" #code_postale="ngModel" required maxlength="4" [(ngModel)]="modelpart.code_postale" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$" #code_postale="ngModel" required minlength="4" maxlength="4" [(ngModel)]="modelpart.code_postale" [ngModelOptions]="{standalone: true}" type="number"></ion-input>
             </ion-item>
             <div *ngIf="f.submitted && code_postale.invalid" class="invalid-feedback">
                 <p style="color: red;" *ngIf="code_postale.errors.required">champ code postale est vide</p>
                 <p style="color: red;" *ngIf="code_postale.errors.maxlength">champ code postale doit etre de taille maximale 4</p>
-                <!--<p style="color: red;" *ngIf="code_postale.errors.pattern">champ code postale doit contenir seulemenet des nombres</p>-->
+                <p style="color: red;" *ngIf="code_postale.errors.pattern">champ code postale doit contenir seulemenet des nombres</p>
+                <p style="color: red;" *ngIf="code_postale.errors.minlength">champ code postale doit etre de taille maximale 4</p>
 
             </div>
 
@@ -87,8 +88,15 @@
 
             <ion-item>
                 <ion-label floating color="black"> Code TVA</ion-label>
-                <ion-input [(ngModel)]="modelpart.TVA" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$" maxlength="10" minlength="3" required #TVA="ngModel" [(ngModel)]="modelpart.TVA" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
             </ion-item>
+            <div *ngIf="f.submitted && TVA.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="TVA.errors.required">champ TVA est vide</p>
+                <p style="color: red;" *ngIf="TVA.errors.maxlength">champ TVA doit etre de taille maximale 10</p>
+                <p style="color: red;" *ngIf="TVA.errors.pattern">champ TVA doit contenir seulemenet des nombres</p>
+                <p style="color: red;" *ngIf="TVA.errors.minlength">champ TVA doit etre de taille maximale 10</p>
+
+            </div>
 
 
             <ion-item>
@@ -104,23 +112,35 @@
 
             <ion-item>
                 <ion-label color="black"> Nombre de place à réserver</ion-label>
-                <ion-input [(ngModel)]="modelpart.reserver" [ngModelOptions]="{standalone: true}" placeholder="400 DH/personne" type="text"></ion-input>
+                <ion-input required [(ngModel)]="modelpart.reserver" #reserver="ngModel" pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$" maxlength="2" minlength="1" [ngModelOptions]="{standalone: true}" placeholder="400 DH/personne" type="number"></ion-input>
             </ion-item>
+            <div *ngIf="f.submitted && reserver.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="reserver.errors.required">champ reserver est vide</p>
+                <p style="color: red;" *ngIf="reserver.errors.maxlength">champ reserver doit etre de taille maximale 2</p>
+                <p style="color: red;" *ngIf="reserver.errors.pattern">champ reserver doit contenir seulemenet des nombres</p>
+                <p style="color: red;" *ngIf="reserver.errors.minlength">champ reserver doit etre de taille maximale 2</p>
+
+            </div>
 
 
 
             <ion-item>
                 <ion-label floating>Choix du programme*</ion-label>
-                <ion-select [(ngModel)]="modelpart.programme" [ngModelOptions]="{standalone: true}">
+                <ion-select required aria-required="true" [(ngModel)]="modelpart.programme" [ngModelOptions]="{standalone: true}">
                     <ion-option [value]="prog.title" *ngFor="let prog of programme">{{prog.title}}</ion-option>
                 </ion-select>
             </ion-item>
+            <div *ngIf="f.submitted && programme.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="programme.errors.required">champ programme est vide</p>
+
+            </div>
 
             <ion-item>
                 <ion-label floating>Methode de paiement*</ion-label>
                 <ion-select [(ngModel)]="modelpart.paiement" [ngModelOptions]="{standalone: true}">
                     <ion-option [value]="cat.title" *ngFor="let cat of paiement">{{cat.title}}</ion-option>
                 </ion-select>
+
             </ion-item>
             <ion-item>
                 <ion-label floating>Type de participants*</ion-label>
@@ -132,24 +152,30 @@
             <div>
                 <ion-item>
                     <ion-label floating color="black">Chéque N° </ion-label>
-                    <ion-input [(ngModel)]="modelpart.num_cheque" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                    <ion-input pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$" #num_cheque="ngModel" maxlength="20" [(ngModel)]="modelpart.num_cheque" [ngModelOptions]="{standalone: true}" type="number"></ion-input>
                 </ion-item>
+            </div>
+            <div *ngIf="f.submitted && num_cheque.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="num_cheque.errors.maxlength">champ cheque doit etre de taille maximale 20</p>
+                <p style="color: red;" *ngIf="num_cheque.errors.pattern">champ cheque doit contenir seulemenet des nombres</p>
+
             </div>
             <ion-row>
 
 
                 <ion-col>
 
-                    <div *ngIf="count <= 10">
+                    <div *ngIf="count <= 100">
+
                         <button ion-button color="primary" block large round>Soumettre </button>
-
-
                     </div>
+
+
 
                 </ion-col>
             </ion-row>
             <h5> • Télècharger le bon de commande convenable au soirée choisi par
-                <a (click)="telecharger()"> <strong>ici </strong></a>
+                <a (click)="telecharger() "> <strong>ici </strong></a>
             </h5>
         </ion-list>
     </form>

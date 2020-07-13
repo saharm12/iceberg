@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, ToastController,NavController, NavParams, AlertController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import {  FileUploader  } from 'ng2-file-upload';
 import { CandidatProvider } from '../../providers/candidat/candidat';
@@ -7,6 +7,8 @@ import {  FormGroup ,FormControl, Validators} from "@angular/forms";
 import {Candidat} from "./candidat.model"
 import { ReglePage } from '../regle/regle';
 import { MeetingPage } from '../meeting/meeting';
+import { MainPage } from '../main/main';
+import { AproposPage } from '../apropos/apropos';
 /**
  * Generated class for the CandidatPage page.
  *
@@ -25,7 +27,7 @@ export class CandidatPage {
 
   uploadedFile:File ;
   secondFile :File ; 
-  ischecked : boolean = false;
+  ischecked : boolean ;
   public uploader:FileUploader ;
   canditModel : Candidat;
  fileURL="";
@@ -40,7 +42,7 @@ client="";
 categorie="";
 
 
-  constructor(private alertCtrl: AlertController,private CanditProv: CandidatProvider ,public navCtrl: NavController, public navParams: NavParams,private http:HttpClient) {
+  constructor(private toastCtrl: ToastController,private alertCtrl: AlertController,private CanditProv: CandidatProvider ,public navCtrl: NavController, public navParams: NavParams,private http:HttpClient) {
 
     this.canditModel= new Candidat();
   
@@ -89,6 +91,16 @@ categorie="";
       //file.withCredentials = false; 
     // };
   }
+  main(){
+    this.navCtrl.push(MainPage);
+  }
+  apropos(){
+    this.navCtrl.push(AproposPage);
+  
+  }
+  return(){
+    this.navCtrl.push(MainPage);
+  }
   
 
   fileChange(element) {
@@ -124,14 +136,28 @@ data.append('client',this.client);
 data.append('categorie',this.categorie); 
 data.append('firstfile',this.uploadedFile);
 data.append('secondfile',this.secondFile); 
- 
-if (this.ischecked = false){
-this.showPopup("Erreur","Erreur");
-}else{
+
+this.CanditProv.checkemailNotTaken(this.email).subscribe((res:any)=>{
+  console.log(res.emailNotTaken)
+ if(!res.emailNotTaken)
+ { 
+  this.presentToastemail()   
+ }else{
+  this.CanditProv.checkGSMNotTaken(this.GSM).subscribe((res:any)=>{
+    console.log(res.emailNotTaken)
+   if(!res.emailNotTaken)
+   { 
+    this.presentToastGSM()   
+   }else{
+
+
 
   this.http.post('http://localhost:3000/candidat/addfiles',data ).subscribe(data=>{
   let result:any =data; 
     console.log(result);
+    if(result){
+      this.showPopup("Félicitation", "Votre inscription a été effectués avec succés");
+    }
   })
 //this.CanditProv.PostCandit(data).subscribe(data=>{
    // let result :any = data; 
@@ -139,12 +165,46 @@ this.showPopup("Erreur","Erreur");
     //{ 
    
      //console.log("ok")
-    } 
+   
       
       
    // }
  //})
  
+}}
+ 
+  )}
+}
+)}
+
+presentToastemail() {
+  let toast = this.toastCtrl.create({
+    message: 'Email deja existant veuillez saisir un autre!!',
+    duration: 3000,
+    cssClass:'iontoast',
+    position: 'top'
+  });
+
+  toast.onDidDismiss(() => {
+    console.log('Dismissed toast');
+  });
+
+  toast.present();
+}
+
+presentToastGSM() {
+  let toast = this.toastCtrl.create({
+    message: 'GSM deja existant veuillez saisir un autre!!',
+    duration: 3000,
+    cssClass:'iontoast',
+    position: 'top'
+  });
+
+  toast.onDidDismiss(() => {
+    console.log('Dismissed toast');
+  });
+
+  toast.present();
 }
 lire(){
   this.navCtrl.push(ReglePage);

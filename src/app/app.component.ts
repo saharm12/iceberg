@@ -16,6 +16,7 @@ import {timer} from 'rxjs/observable/timer';
 import { DocumentPage } from '../pages/document/document';
 import { TabsPage } from '../pages/tabs/tabs';
 import {FirstPage} from '../pages/first/first';
+import { AproposPage } from '../pages/apropos/apropos';
 @Component({
   templateUrl: 'app.html'
 })
@@ -49,7 +50,9 @@ showSplash = true;
       { icon: 'md-chatboxes' ,title: 'Chat', component: ChatPage  },
      
       { icon: 'md-star-half' ,title: ' Remplir enquete de satisfaction', component: EnquetePage   },
-      { icon: 'md-locate' ,title: ' Google Map', component: MapPage  }
+      { icon: 'md-locate' ,title: ' Google Map', component: MapPage  },
+      { icon: 'md-information-circle' ,title: ' Apropos', component: AproposPage  }
+
         ];
     
   }

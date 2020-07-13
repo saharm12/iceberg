@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { IonicPage, ToastController,AlertController,NavController, NavParams } from "ionic-angular";
 import { HttpClient } from "@angular/common/http";
+import { MainPage } from "../main/main";
+import { AproposPage } from "../apropos/apropos";
 
 /**
  * Generated class for the EnquetePage page.
@@ -21,7 +23,7 @@ export class EnquetePage {
   repQestion4: string = "A";
   repQestion5: string = "";
   repQestion6: string = "";
-  constructor(
+  constructor(private toastCtrl: ToastController,private alertCtrl: AlertController,
     public navCtrl: NavController,
     public navParams: NavParams,
     private http: HttpClient
@@ -29,6 +31,16 @@ export class EnquetePage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad EnquetePage");
+  }
+  main(){
+    this.navCtrl.setRoot(MainPage);
+  }
+  apropos(){
+    this.navCtrl.setRoot(AproposPage);
+  
+  }
+  return(){
+    this.navCtrl.setRoot(MainPage);
   }
 
   addResp() {}
@@ -66,7 +78,25 @@ export class EnquetePage {
     }).subscribe(data=>{ 
       let result:any =data ; 
       console.log(result); 
+      if(result){
+        this.presentToast();
+
+      }
     })
     console.log(this.repQestion1);
+  }
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Votre réponse a été bien enregistrer',
+      duration: 3000,
+      cssClass:'iontoast',
+      position: 'top'
+    });
+  
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+  
+    toast.present();
   }
 }

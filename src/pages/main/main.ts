@@ -11,6 +11,7 @@ import { LaureatPage } from '../laureat/laureat';
 import { DocumentPage } from '../document/document';
 import { AproposPage } from '../apropos/apropos';
 import { TabsPage } from '../tabs/tabs';
+import { SponsorsPage } from '../sponsors/sponsors';
 /**
  * Generated class for the MainPage page.
  *
@@ -76,7 +77,7 @@ export class MainPage {
         buttons:[{
           text:'Joindre Chat', 
           handler:data=>{
-            this.navCtrl.push(ChatPage,{name:data.NickName})
+            this.navCtrl.setRoot(ChatPage,{name:data.NickName})
             console.log(data); 
           },
           
@@ -94,7 +95,10 @@ export class MainPage {
       alert.present(); 
       //this.navCtrl.push(ChatPage);
     }
+   Sponsors(){
+     this.navCtrl.setRoot(SponsorsPage);
+   }
    document(){
-     this.navCtrl.push(DocumentPage);
+     this.navCtrl.setRoot(DocumentPage);
    }
 }

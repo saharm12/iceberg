@@ -6,14 +6,11 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-
-        <ion-title>
-
-            Enquéte de satifaction
-
-        </ion-title>
-
+    <ion-navbar color="primary">
+        <button ion-button menuToggle icon-only>
+            <ion-icon name='menu'></ion-icon>
+          </button>
+        <ion-title>Enquete de satisfaction</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -225,3 +222,35 @@
     <button ion-button float-right (click)=goNext()>Ajouter</button>
 
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+
+        <ion-segment>
+            <ion-segment-button value="new" (click)="return()">
+
+                <ion-icon ios="ios-arrow-back-outline" md="md-arrow-back"></ion-icon>
+
+
+            </ion-segment-button>
+            <ion-segment-button value="new" (click)="main()">
+
+                <ion-icon color="primary" ios="ios-home" md="md-home"></ion-icon>
+
+                Accueil
+
+
+
+
+            </ion-segment-button>
+
+
+            <ion-segment-button value="hot" (click)="apropos()">
+                <ion-icon color="primary" ios="ios-aperture" md="md-aperture"></ion-icon>
+
+                A propos
+            </ion-segment-button>
+        </ion-segment>
+
+
+    </ion-toolbar>
+</ion-footer>

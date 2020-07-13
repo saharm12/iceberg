@@ -5,17 +5,20 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar>
-        <ion-title>sponsors</ion-title>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle icon-only>
+            <ion-icon name='menu'></ion-icon>
+          </button>
+        <ion-title>Sponsors & Partenaires</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-    <ion-label>
-        <h1> Nos Sponsors</h1>
+    <ion-label style="text-align: center; color: darkblue;">
+        <h2> Nos Sponsors</h2>
     </ion-label>
-    <ion-slides pager="true">
+    <ion-slides pager="true" class="header-banner">
 
         <ion-slide *ngFor="let spons of sponsors">
 
@@ -25,11 +28,11 @@
         </ion-slide>
 
     </ion-slides>
-    <ion-label>
-        <h1> Nos partenaires</h1>
+    <ion-label style="text-align: center; color: darkblue;">
+        <h2> Nos partenaires</h2>
     </ion-label>
 
-    <ion-slides pager="true">
+    <ion-slides pager="true" class="header-banner">
 
         <ion-slide *ngFor="let parte of partenair">
 
@@ -42,3 +45,35 @@
 
 
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+
+        <ion-segment>
+            <ion-segment-button value="new" (click)="return()">
+
+                <ion-icon ios="ios-arrow-back-outline" md="md-arrow-back"></ion-icon>
+
+
+            </ion-segment-button>
+            <ion-segment-button value="new" (click)="main()">
+
+                <ion-icon color="primary" ios="ios-home" md="md-home"></ion-icon>
+
+                Accueil
+
+
+
+
+            </ion-segment-button>
+
+
+            <ion-segment-button value="hot" (click)="apropos()">
+                <ion-icon name="information-circle"></ion-icon>
+
+                A propos
+            </ion-segment-button>
+        </ion-segment>
+
+
+    </ion-toolbar>
+</ion-footer>

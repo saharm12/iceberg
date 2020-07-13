@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams , Navbar,  Platform } from 'ionic-angular';
 import {SponsorsProvider} from '../../providers/sponsors/sponsors'
 import { PartenaireProvider} from '../../providers/partenaire/partenaire'
+import { HomePage } from '../home/home';
+import { AproposPage } from '../apropos/apropos';
+import { MainPage } from '../main/main';
 /**
  * Generated class for the SponsorsPage page.
  *
@@ -17,13 +20,30 @@ import { PartenaireProvider} from '../../providers/partenaire/partenaire'
 export class SponsorsPage {
   sponsors=[];
   partenair=[];
+  @ViewChild(Navbar) navBar: Navbar;
+
 
   base_url="http://localhost:3000"
-  constructor(private partProvider : PartenaireProvider , public navCtrl: NavController, public navParams: NavParams, private sponProv : SponsorsProvider) {
+  constructor(public platform: Platform,private partProvider : PartenaireProvider , public navCtrl: NavController, public navParams: NavParams, private sponProv : SponsorsProvider) {
+  
+  
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SponsorsPage');
+ 
+
+
+  
+  }
+  main(){
+    this.navCtrl.setRoot(MainPage);
+  }
+  apropos(){
+    this.navCtrl.setRoot(AproposPage);
+  
+  }
+  return(){
+    this.navCtrl.setRoot(MainPage);
   }
 
   ngOnInit() {
@@ -32,7 +52,9 @@ export class SponsorsPage {
     this.getsponsors();
     this.getpartenaire();
   }
-
+  
+  
+  
   getsponsors()
   { 
       
@@ -48,6 +70,16 @@ export class SponsorsPage {
 
       })
     
+  }
+  backButton(){
+    
+
+  }
+  setBackButtonAction(){
+    this.navBar.backButtonClick = () => {
+    //Write here wherever you wanna do
+     this.navCtrl.pop()
+    }
   }
 
   getpartenaire()

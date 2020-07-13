@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,AlertController} from 'ionic-angular';
+import { Component ,ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams ,AlertController } from 'ionic-angular';
 import { SpeakerProvider} from '../../providers/speaker/speaker';
 import { DocumentProvider} from '../../providers/document/document';
 import { ParticipantPage } from '../participant/participant';
 import {ReserverpassPage} from '../reserverpass/reserverpass';
 import { ProgrammeProvider} from'../../providers/programme/programme'
 import {PartProvider } from '../../providers/part/part';
+import { MainPage } from '../main/main';
+import { AproposPage } from '../apropos/apropos';
 /**
  * Generated class for the MeetingPage page.
  *
@@ -17,6 +19,7 @@ import {PartProvider } from '../../providers/part/part';
 @Component({
   selector: 'page-meeting',
   templateUrl: 'meeting.html',
+
 })
 export class MeetingPage {
   speake= []; 
@@ -105,5 +108,15 @@ showPopup(title, text) {
   });
   alert.present();
 }
+main(){
+  this.navCtrl.push(MainPage);
+}
+apropos(){
+  this.navCtrl.push(AproposPage);
 
 }
+return(){
+  this.navCtrl.push(MainPage);
+}
+}
+

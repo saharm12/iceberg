@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, ViewController,NavController, NavParams } from 'ionic-angular';
 import { CategoriePage } from '../categorie/categorie';
 /**
  * Generated class for the DigitalPage page.
@@ -15,13 +15,13 @@ import { CategoriePage } from '../categorie/categorie';
 })
 export class DigitalPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DigitalPage');
   }
   fermer(){
-    this.navCtrl.push(CategoriePage);
+    this.viewCtrl.dismiss();
   }
 }

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams  , AlertController} from 'ionic-ang
 import {Participant} from "./reserver.model";
 import { PartProvider } from '../../providers/part/part';
 import { MeetingPage } from '../meeting/meeting';
+import { DocumentPage } from '../document/document';
 /**
  * Generated class for the ReserverpassPage page.
  *
@@ -22,6 +23,7 @@ export class ReserverpassPage {
  type_part=[];
 count ;
   modelpart: Participant;
+
 
   programme=[]
   constructor(private alertCtrl: AlertController ,public nav: NavController, public navParams: NavParams, private Part:PartProvider ){
@@ -76,7 +78,7 @@ this.modelpart = new Participant();
 
   }
   ngOnInit() {
-   this.getCount();
+   
   }
   Soumettre(){  
   
@@ -155,7 +157,7 @@ this.modelpart = new Participant();
 
 
       telecharger(){
-        this.nav.push(MeetingPage);
+        this.nav.setRoot(DocumentPage);
       } 
 
      

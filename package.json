@@ -27,6 +27,8 @@
     "@ionic-native/splash-screen": "4.20.0",
     "@ionic-native/status-bar": "4.20.0",
     "@ionic/storage": "2.2.0",
+    "@mapbox/mapbox-gl-directions": "^4.0.3",
+    "@mapbox/mapbox-gl-geocoder": "^4.5.1",
     "cordova-plugin-email-composer": "^0.9.2",
     "cordova-plugin-facebook4": "^6.4.0",
     "cordova-plugin-geolocation": "^4.0.2",

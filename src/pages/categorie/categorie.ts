@@ -8,6 +8,9 @@ import { SeoPage } from '../seo/seo';
 import { InfluenceurPage } from '../influenceur/influenceur';
 import {MobilePage} from '../mobile/mobile';
 import { BjuryPage } from '../bjury/bjury';
+import { ConcoursPage } from '../concours/concours';
+import { AproposPage } from '../apropos/apropos';
+import { MainPage } from '../main/main';
 
 /**
  * Generated class for the CategoriePage page.
@@ -28,6 +31,16 @@ export class CategoriePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoriePage');
+  }
+  main(){
+    this.navCtrl.setRoot(MainPage);
+  }
+  apropos(){
+    this.navCtrl.setRoot(AproposPage);
+  
+  }
+  return(){
+    this.navCtrl.setRoot(ConcoursPage);
   }
   
   critere(event: any){

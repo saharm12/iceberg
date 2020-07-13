@@ -39,4 +39,30 @@ export class ProvidersRestExpoProvider {
 
     });
   }
+
+   checkemailNotTaken(email_exposant)
+  {
+    let token = localStorage.getItem('token'); 
+    return this.http.post(this.BASE_URL+'/checkemailNotTaken',{
+      'email_exposant': email_exposant,
+     
+    }); 
+  }
+  checktelNotTaken(telephone)
+  {
+    let token = localStorage.getItem('token'); 
+    return this.http.post(this.BASE_URL+'/checktelNotTaken',{
+      'telephone': telephone,
+     
+    }); 
+  }
+
+  checkmobileNotTaken(mobile)
+  {
+    let token = localStorage.getItem('token'); 
+    return this.http.post(this.BASE_URL+'/checkmobileNotTaken',{
+      'mobile': mobile,
+     
+    }); 
+  }
 }

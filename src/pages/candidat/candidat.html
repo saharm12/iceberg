@@ -5,9 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar>
-        <ion-title>candidat</ion-title>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle icon-only>
+            <ion-icon name='menu'></ion-icon>
+          </button>
+        <ion-title>Candidat</ion-title>
     </ion-navbar>
+
 </ion-header>
 
 <ion-content>
@@ -42,38 +46,79 @@
 
             <ion-item>
                 <ion-label floating color="black"> Nom de la société / agence</ion-label>
-                <ion-input type="text" [(ngModel)]="ste" [ngModelOptions]="{standalone: true}"></ion-input>
+                <ion-input pattern="[a-zA-Z ]*" minlength="3" required #name="ngModel" type="text" [(ngModel)]="ste" [ngModelOptions]="{standalone: true}"></ion-input>
             </ion-item>
+            <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="name.errors.required">champ nom est vide</p>
+                <p style="color: red;" *ngIf="name.errors.minlength">champ nom doit contenir au moins 3 caractéres</p>
+                <p style="color: red;" *ngIf="name.errors.pattern">champ nom doit contenir seulemenet des caractéres</p>
+
+            </div>
 
             <ion-item>
                 <ion-label floating color="black"> Personne responsable de la candidature*</ion-label>
-                <ion-input [(ngModel)]="respon" type="text" [ngModelOptions]="{standalone: true}"></ion-input>
+                <ion-input pattern="[a-zA-Z ]*" minlength="3" #firstname="ngModel" required [(ngModel)]="respon" type="text" [ngModelOptions]="{standalone: true}"></ion-input>
             </ion-item>
+            <div *ngIf="f.submitted && firstname.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="firstname.errors.required">champ personne responsable est vide</p>
+                <p style="color: red;" *ngIf="firstname.errors.minlength">champ personne responsable doit contenir au moins 3 caractéres</p>
+                <p style="color: red;" *ngIf="firstname.errors.pattern">champ personne responsable doit contenir seulemenet des caractéres</p>
+
+            </div>
 
             <ion-item>
                 <ion-label floating color="black"> Adresse*</ion-label>
-                <ion-input [(ngModel)]="adresse" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input pattern="[a-zA-Z ]*" minlength="3" #Adresse="ngModel" required [(ngModel)]="adresse" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
             </ion-item>
+            <div *ngIf="f.submitted && Adresse.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="Adresse.errors.required">champ adresse est vide</p>
+                <p style="color: red;" *ngIf="Adresse.errors.maxlength">champ adresse doit contenir au moins 3 caractéres </p>
+                <p style="color: red;" *ngIf="Adresse.errors.pattern">champ adresse doit contenir seulemenet des caractéres</p>
+
+            </div>
+
+
 
             <ion-item>
                 <ion-label floating color="black"> Code postal*</ion-label>
-                <ion-input [(ngModel)]="codepostale" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input maxlength="4" pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$" required #postale="ngModel" [(ngModel)]="codepostale" [ngModelOptions]="{standalone: true}" type="number"></ion-input>
             </ion-item>
+            <div *ngIf="f.submitted && postale.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="postale.errors.required">champ code postale est vide</p>
+                <p style="color: red;" *ngIf="postale.errors.maxlength">champ code postale doit contenir au moins 3 caractéres </p>
+                <p style="color: red;" *ngIf="postale.errors.pattern">champ code postale doit contenir seulemenet des caractéres</p>
+
+            </div>
+
 
             <ion-item>
                 <ion-label floating color="black"> Email*</ion-label>
-                <ion-input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"></ion-input>
+                <ion-input required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" #mail="ngModel" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"></ion-input>
             </ion-item>
+            <div *ngIf="f.submitted && mail.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="mail.errors.required">champ email est vide</p>
+                <p style="color: red;" *ngIf="mail.errors.pattern">champ email est incorrecte</p>
+
+            </div>
+
 
             <ion-item>
                 <ion-label floating color="black"> GSM*</ion-label>
-                <ion-input [(ngModel)]="GSM" type="text" [ngModelOptions]="{standalone: true}"></ion-input>
+                <ion-input minlength="8" pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$" #telephone="ngModel" maxlength="8" required [(ngModel)]="GSM" type="text" [ngModelOptions]="{standalone: true}"></ion-input>
             </ion-item>
+            <div *ngIf="f.submitted && telephone.invalid" class="invalid-feedback">
+                <p style="color: red;" *ngIf="telephone.errors.required">champ GSM est vide</p>
+                <p style="color: red;" *ngIf="telephone.errors.maxlength">champ GSM doit etre de taille maximale 8</p>
+                <p style="color: red;" *ngIf="telephone.errors.pattern">champ GSM doit contenir seulemenet des nombres</p>
+                <p style="color: red;" *ngIf="telephone.errors.minlength">champ GSM doit etre de taille maximale 8</p>
+
+            </div>
 
             <ion-item>
                 <ion-label floating color="black">Site web</ion-label>
-                <ion-input [(ngModel)]="siteweb" type="text" [ngModelOptions]="{standalone: true}"></ion-input>
+                <ion-input required [(ngModel)]="siteweb" type="text" [ngModelOptions]="{standalone: true}"></ion-input>
             </ion-item>
+
 
             <ion-item>
                 <ion-label floating color="black">Client / Fournisseur</ion-label>
@@ -127,3 +172,35 @@
     </ion-list>
 
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+
+        <ion-segment>
+            <ion-segment-button value="new" (click)="return()">
+
+                <ion-icon ios="ios-arrow-back-outline" md="md-arrow-back"></ion-icon>
+
+
+            </ion-segment-button>
+            <ion-segment-button value="new" (click)="main()">
+
+                <ion-icon color="primary" ios="ios-home" md="md-home"></ion-icon>
+
+                Accueil
+
+
+
+
+            </ion-segment-button>
+
+
+            <ion-segment-button value="hot" (click)="apropos()">
+                <ion-icon color="primary" ios="ios-aperture" md="md-aperture"></ion-icon>
+
+                Apropos
+            </ion-segment-button>
+        </ion-segment>
+
+
+    </ion-toolbar>
+</ion-footer>

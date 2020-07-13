@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage,ViewController, NavController, NavParams } from 'ionic-angular';
 import { CategoriePage } from '../categorie/categorie';
 
 /**
@@ -16,13 +16,13 @@ import { CategoriePage } from '../categorie/categorie';
 })
 export class WebsitePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WebsitePage');
   }
 fermer(){
-  this.navCtrl.push(CategoriePage);
+  this.viewCtrl.dismiss();
 }
 }

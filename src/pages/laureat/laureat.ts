@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LaureatProvider } from '../../providers/laureat/laureat';
+import { MainPage } from '../main/main';
+import { AproposPage } from '../apropos/apropos';
 
 /**
  * Generated class for the LaureatPage page.
@@ -25,6 +27,16 @@ export class LaureatPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LaureatPage');
+  }
+  main(){
+    this.navCtrl.setRoot(MainPage);
+  }
+  apropos(){
+    this.navCtrl.setRoot(AproposPage);
+  
+  }
+  return(){
+    this.navCtrl.setRoot(MainPage);
   }
 
   ngOnInit() { this.getLaureat()

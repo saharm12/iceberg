@@ -6,7 +6,10 @@
 -->
 <ion-header>
     <ion-navbar color="primary">
-        <ion-title>lauréats </ion-title>
+        <button ion-button menuToggle icon-only>
+            <ion-icon name='menu'></ion-icon>
+          </button>
+        <ion-title>Lauréats</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -38,13 +41,13 @@
     <ion-toolbar>
 
         <ion-segment>
-            <ion-segment-button value="new">
+            <ion-segment-button value="new" (click)="return()">
 
                 <ion-icon ios="ios-arrow-back-outline" md="md-arrow-back"></ion-icon>
 
 
             </ion-segment-button>
-            <ion-segment-button value="new">
+            <ion-segment-button value="new" (click)="main()">
 
                 <ion-icon color="primary" ios="ios-home" md="md-home"></ion-icon>
 
@@ -56,10 +59,10 @@
             </ion-segment-button>
 
 
-            <ion-segment-button value="hot" (click)="Main()">
+            <ion-segment-button value="hot" (click)="apropos()">
                 <ion-icon color="primary" ios="ios-aperture" md="md-aperture"></ion-icon>
 
-                Apropos
+                A propos
             </ion-segment-button>
         </ion-segment>
 

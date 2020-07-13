@@ -31,7 +31,7 @@ export class InscriptionPage {
   }
 
   exposant(){
-    this.navCtrl.push(ExposantPage);
+    this.navCtrl.setRoot(ExposantPage);
   }
   participant(){
     this.navCtrl.push(ParticipantPage);

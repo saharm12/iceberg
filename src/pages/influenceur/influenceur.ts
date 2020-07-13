@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, ViewController,NavParams } from 'ionic-angular';
 import { CategoriePage } from '../categorie/categorie';
 
 /**
@@ -16,13 +16,14 @@ import { CategoriePage } from '../categorie/categorie';
 })
 export class InfluenceurPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InfluenceurPage');
   }
-fermer(){
-  this.navCtrl.push(CategoriePage);
-}
+  fermer(){
+    this.viewCtrl.dismiss();
+  
+  }
 }

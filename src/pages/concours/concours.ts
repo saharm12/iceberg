@@ -8,6 +8,8 @@ import {PopoverController} from 'ionic-angular';
 import { ReglePage } from '../regle/regle';
 import { ExposantPage } from '../exposant/exposant';
 import { CandidatPage } from '../candidat/candidat';
+import { MainPage } from '../main/main';
+import { AproposPage } from '../apropos/apropos';
 
 /**
  * Generated class for the ConcoursPage page.
@@ -31,22 +33,32 @@ export class ConcoursPage {
   }
   
   
-
+  main(){
+    this.navCtrl.setRoot(MainPage );
+  }
+  apropos(){
+    this.navCtrl.setRoot(AproposPage);
+  
+  }
+  return(){
+    this.navCtrl.setRoot(MainPage);
+  }
   view(){
-    this.navCtrl.push(JurryPage);
+    this.navCtrl.setRoot(JurryPage);
   }
   vieww(){
-    this.navCtrl.push(CategoriePage);
+    this.navCtrl.setRoot(CategoriePage);
   }
   exposant(){
-    this.navCtrl.push(ExposantPage);
+    this.navCtrl.setRoot(ExposantPage);
   }
   candidat(){
-    this.navCtrl.push(CandidatPage);
+    this.navCtrl.setRoot(CandidatPage);
   }
   
-  regle(event:any){
-    let popover = this.popoverCtrl.create(ReglePage,{}, {cssClass: 'contact-popover'});
-  popover.present({
-    ev: event });}
+  regle(){
+    this.navCtrl.setRoot(ReglePage)
+  }
+
+   
 }

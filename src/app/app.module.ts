@@ -54,6 +54,7 @@ import { HtmlPipe } from '../pages/meeting/html.pipe';
 import { PartenaireProvider } from '../providers/partenaire/partenaire';
 
 
+
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     DocumentPage,
     TabsPage,
     AproposPage,
-    HtmlPipe
+    HtmlPipe,
+
   
     
    
@@ -105,7 +107,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     MyApp,
     HomePage, 
     MainPage, 
-    
+
     EnquetePage,
     RegisterPage,
     InscriptionPage,

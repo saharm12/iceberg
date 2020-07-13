@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DocumentProvider} from '../../providers/document/document';
 import { MainPage } from '../main/main';
 import { MapPage } from '../map/map';
+import { AproposPage } from '../apropos/apropos';
 
 /**
  * Generated class for the DocumentPage page.
@@ -33,10 +34,17 @@ export class DocumentPage {
     this.getDocument();
   
   }
+  main(){
+    this.navCtrl.setRoot(MainPage);
+  }
+  apropos(){
+    this.navCtrl.setRoot(AproposPage);
+  
+  }
+  return(){
+    this.navCtrl.setRoot(MainPage);
+  }
 
-Main(){
-  this.navCtrl.push(MainPage);
-}
   getDocument(){
     {   
       this.docProv.getDocument().subscribe(data=>{

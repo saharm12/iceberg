@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { JuryProvider } from '../../providers/jury/jury';
+import { MainPage } from '../main/main';
+import { AproposPage } from '../apropos/apropos';
+import { ConcoursPage } from '../concours/concours';
 
 /**
  * Generated class for the JurryPage page.
@@ -24,6 +27,16 @@ export class JurryPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad JurryPage');
+  }
+  main(){
+    this.navCtrl.setRoot(MainPage);
+  }
+  apropos(){
+    this.navCtrl.setRoot(AproposPage);
+  
+  }
+  return(){
+    this.navCtrl.setRoot(ConcoursPage);
   }
   ngOnInit() {
     this.getjury(); 

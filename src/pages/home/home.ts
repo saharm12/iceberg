@@ -25,7 +25,7 @@ toastOptions:ToastOptions;
   {
 
     console.log("token", localStorage.getItem("token"));
- if(localStorage.getItem("token")!= null){
+ if(localStorage.getItem("token")!== null){
 
   this.navCtrl.setRoot(MainPage);
 
