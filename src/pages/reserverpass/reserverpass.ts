@@ -65,7 +65,7 @@ count ;
     ]
   
 this.modelpart = new Participant();
-      this.getCount();
+      
   }
 
     
@@ -118,7 +118,7 @@ this.modelpart = new Participant();
           console.log("res", res);
          // let result:any = res; 
           console.log("res", res.participant);
-         if(res.particpant >= 13){
+         if(res.particpant >= 14){
             
             this.showPopup("Erreur", "inscription a été expiré.");
     

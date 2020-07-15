@@ -13,13 +13,13 @@
     </ion-navbar>
 </ion-header>
 <ion-content>
-    <form #f="ngForm" (ngSubmit)="Soumettre()">
+    <form #f="ngForm" (ngSubmit)="Soumettre(f)" novalidate>
         <ion-list inset>
 
 
             <ion-item>
                 <ion-label floating color="black"> Nom</ion-label>
-                <ion-input pattern="[a-zA-Z ]*" minlength="3" required #name="ngModel" [(ngModel)]="expoModel.name" name="name" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input pattern="[a-zA-Z ]*" minlength="3" required #name="ngModel" [(ngModel)]="expoModel.name" name="name" type="text"></ion-input>
             </ion-item>
             <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
                 <p style="color: red;" *ngIf="name.errors.required">champ nom est vide</p>
@@ -29,7 +29,7 @@
             </div>
             <ion-item>
                 <ion-label floating color="black"> Prenom</ion-label>
-                <ion-input pattern="[a-zA-Z ]*" minlength="3" required #firstname="ngModel" [(ngModel)]="expoModel.firstname" name="firstname" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input pattern="[a-zA-Z ]*" minlength="3" required #firstname="ngModel" [(ngModel)]="expoModel.firstname" name="firstname" type="text"></ion-input>
             </ion-item>
             <div *ngIf="f.submitted && firstname.invalid" class="invalid-feedback">
                 <p style="color: red;" *ngIf="firstname.errors.required">champ prenom est vide</p>
@@ -40,7 +40,7 @@
 
             <ion-item>
                 <ion-label floating color="black"> Email*</ion-label>
-                <ion-input #Email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required [(ngModel)]="expoModel.Email" name="Email" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input #Email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required [(ngModel)]="expoModel.Email" name="Email" type="text"></ion-input>
             </ion-item>
             <div *ngIf="f.submitted && Email.invalid" class="invalid-feedback">
                 <p style="color: red;" *ngIf="Email.errors.required">champ email est vide</p>
@@ -50,7 +50,7 @@
 
             <ion-item>
                 <ion-label floating color="black"> Télèphone*</ion-label>
-                <ion-input minlength="8" pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$" #telephone="ngModel" maxlength="8" required [(ngModel)]="expoModel.telephone" name="telephone" [ngModelOptions]="{standalone: true}" type="number"></ion-input>
+                <ion-input minlength="8" pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$" #telephone="ngModel" maxlength="8" required [(ngModel)]="expoModel.telephone" name="telephone" type="number"></ion-input>
             </ion-item>
             <div *ngIf="f.submitted && telephone.invalid" class="invalid-feedback">
                 <p style="color: red;" *ngIf="telephone.errors.required">champ telephone est vide</p>
@@ -73,7 +73,7 @@
 
             <ion-item>
                 <ion-label floating color="black"> Adresse*</ion-label>
-                <ion-input pattern="[a-zA-Z ]*" minlength="3" required #adresse="ngModel" [(ngModel)]="expoModel.adresse" name="adresse" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input pattern="[a-zA-Z ]*" minlength="3" required #adresse="ngModel" [(ngModel)]="expoModel.adresse" name="adresse" type="text"></ion-input>
             </ion-item>
             <div *ngIf="f.submitted && adresse.invalid" class="invalid-feedback">
                 <p style="color: red;" *ngIf="adresse.errors.required">champ adresse est vide</p>
@@ -84,7 +84,7 @@
 
             <ion-item>
                 <ion-label floating color="black"> Code postal*</ion-label>
-                <ion-input maxlength="4" pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$" #postale="ngModel" required [(ngModel)]="expoModel.postale" type="number" name="postale" [ngModelOptions]="{standalone: true}"></ion-input>
+                <ion-input maxlength="4" pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$" #postale="ngModel" required [(ngModel)]="expoModel.postale" type="number" name="postale"></ion-input>
             </ion-item>
             <div *ngIf="f.submitted && postale.invalid" class="invalid-feedback">
                 <p style="color: red;" *ngIf="postale.errors.required">champ code postale est vide</p>
@@ -95,7 +95,7 @@
 
             <ion-item>
                 <ion-label floating color="black"> Ville*</ion-label>
-                <ion-input pattern="[a-zA-Z ]*" minlength="3" required #ville="ngModel" [(ngModel)]="expoModel.ville" name="ville" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+                <ion-input pattern="[a-zA-Z ]*" minlength="3" required #ville="ngModel" [(ngModel)]="expoModel.ville" name="ville" type="text"></ion-input>
             </ion-item>
             <div *ngIf="f.submitted && ville.invalid" class="invalid-feedback">
                 <p style="color: red;" *ngIf="ville.errors.required">champ ville est vide</p>
@@ -106,7 +106,7 @@
 
             <ion-item>
                 <ion-label floating color="black"> Pays*</ion-label>
-                <ion-input pattern="[a-zA-Z ]*" minlength="3" required #Pays="ngModel" [(ngModel)]="expoModel.Pays" type="text" name="Pays" [ngModelOptions]="{standalone: true}"></ion-input>
+                <ion-input pattern="[a-zA-Z ]*" minlength="3" required #Pays="ngModel" [(ngModel)]="expoModel.Pays" type="text" name="Pays"></ion-input>
             </ion-item>
             <div *ngIf="f.submitted && Pays.invalid" class="invalid-feedback">
                 <p style="color: red;" *ngIf="Pays.errors.required">champ pays est vide</p>
@@ -117,7 +117,7 @@
 
             <ion-item>
                 <ion-label floating color="black">Mobile*</ion-label>
-                <ion-input minlength="8" maxlength="8" pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$" #mobile="ngModel" required [(ngModel)]="expoModel.mobile" name="mobile" [ngModelOptions]="{standalone: true}" type="number"></ion-input>
+                <ion-input minlength="8" maxlength="8" pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$" #mobile="ngModel" required [(ngModel)]="expoModel.mobile" name="mobile" type="number"></ion-input>
             </ion-item>
             <div *ngIf="f.submitted && mobile.invalid" class="invalid-feedback">
                 <p style="color: red;" *ngIf="mobile.errors.required">champ mobile est vide</p>
@@ -130,7 +130,7 @@
 
             <ion-item>
                 <ion-label floating color="black"> Code TVA *</ion-label>
-                <ion-input pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$" maxlength="10" minlength="3" #TVA="ngModel" required [(ngModel)]="expoModel.TVA" type="text" [ngModelOptions]="{standalone: true}"></ion-input>
+                <ion-input pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$" maxlength="10" minlength="3" #TVA="ngModel" required [(ngModel)]="expoModel.TVA" name="TVA" type="text"></ion-input>
             </ion-item>
             <div *ngIf="f.submitted && TVA.invalid" class="invalid-feedback">
                 <p style="color: red;" *ngIf="TVA.errors.required">champ TVA est vide</p>
@@ -141,7 +141,7 @@
             </div>
             <ion-item>
                 <ion-label floating>Méthode de paiement (1500DHT)*</ion-label>
-                <ion-select aria-required="required" [(ngModel)]="expoModel.paiement" name="paiement" [ngModelOptions]="{standalone: true}">
+                <ion-select aria-required="required" [(ngModel)]="expoModel.paiement" name="paiement">
                     <ion-option [value]="cat.title" *ngFor="let cat of paiement">{{cat.title}}</ion-option>
                 </ion-select>
             </ion-item>
@@ -152,7 +152,7 @@
 
             <ion-item>
                 <ion-label floating color="black">Chéque N° </ion-label>
-                <ion-input [(ngModel)]="expoModel.cheque" #cheque="ngModel" type="number" name="cheque" [ngModelOptions]="{standalone: true}"></ion-input>
+                <ion-input [(ngModel)]="expoModel.cheque" #cheque="ngModel" type="number" name="cheque"></ion-input>
             </ion-item>
             <div *ngIf="f.submitted && cheque.invalid" class="invalid-feedback">
 
@@ -168,7 +168,7 @@
 
             <ion-row>
                 <ion-col>
-                    <button ion-button color="primary" block large round>Soumettre </button>
+                    <button ion-button color="primary" block large round>Soumettre</button>
 
                 </ion-col>
             </ion-row>

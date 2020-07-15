@@ -52,7 +52,23 @@ createSuccess = false;
   }
 } 
 participant(){
-  this.navCtrl.push(ReserverpassPage);
+  
+  this.Part.getcountpart().subscribe((res:any)=>{
+   
+      console.log("res", res);
+     // let result:any = res; 
+      console.log("res", res.participant);
+      if(res.participant  == 100){
+          
+        this.showPopup("Erreur", "inscription a été expiré.");
+  
+      }
+      else{
+        this.navCtrl.push(ReserverpassPage);
+      }
+       
+    })
+  
 }
 getDocument(){
   {   

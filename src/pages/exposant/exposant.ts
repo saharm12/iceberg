@@ -5,7 +5,7 @@ import {Exposant} from "./exposant.model";
 import { MeetingPage } from '../meeting/meeting';
 import { MainPage } from '../main/main';
 import { AproposPage } from '../apropos/apropos';
-
+import {NgForm} from '@angular/forms';
 
 
 /**
@@ -60,8 +60,9 @@ export class ExposantPage {
     this.navCtrl.setRoot(MainPage);
   }
 
-Soumettre(){
+Soumettre(f: NgForm){
   
+  if(f.valid){
   this.Expo.checkmobileNotTaken(this.expoModel.mobile).subscribe((res:any)=>{
     console.log(res.mobileNotTaken)
     if(!res.mobileNotTaken)
@@ -108,6 +109,9 @@ Soumettre(){
   })
 }
 })
+}else {
+  this.showError("");
+}
     }
 
     showError(text){
